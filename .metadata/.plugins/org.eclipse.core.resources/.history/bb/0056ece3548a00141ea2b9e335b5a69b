@@ -1,0 +1,2213 @@
+	.module CCxx00.C
+	.area data(ram, con, rel)
+_SerData::
+	.blkb 2
+	.area idata
+	.byte 12,1
+	.area data(ram, con, rel)
+	.blkb 2
+	.area idata
+	.byte 2,3
+	.area data(ram, con, rel)
+	.blkb 2
+	.area idata
+	.byte 4,5
+	.area data(ram, con, rel)
+	.blkb 2
+	.area idata
+	.byte 6,7
+	.area data(ram, con, rel)
+	.blkb 2
+	.area idata
+	.byte 8,9
+	.area data(ram, con, rel)
+	.blkb 52
+	.area idata
+	.word 0,0,0,0,0
+	.word 0,0,0,0,0
+	.word 0,0,0,0,0
+	.word 0,0,0,0,0
+	.word 0,0,0,0,0
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.dbsym e SerData _SerData A[62:62]c
+_RFData::
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 2
+	.area idata
+	.byte 0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 44
+	.area idata
+	.word 0,0,0,0,0
+	.word 0,0,0,0,0
+	.word 0,0,0,0,0
+	.word 0,0,0,0,0
+	.byte 0,0,0,0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.dbsym e RFData _RFData A[62:62]c
+_rfSettings7680::
+	.blkb 1
+	.area idata
+	.byte 11
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 92
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 78
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 222
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 123
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 131
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 147
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 35
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 164
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 68
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 86
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 16
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 24
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 22
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 108
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 67
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 64
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 145
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 169
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 10
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 17
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 89
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 136
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 49
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 11
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 41
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 6
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 4
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 5
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.blkb 1
+	.area idata
+	.byte 255
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.dbstruct 0 34 S_RF_SETTINGS
+	.dbfield 0 FSCTRL1 c
+	.dbfield 1 FSCTRL0 c
+	.dbfield 2 FREQ2 c
+	.dbfield 3 FREQ1 c
+	.dbfield 4 FREQ0 c
+	.dbfield 5 MDMCFG4 c
+	.dbfield 6 MDMCFG3 c
+	.dbfield 7 MDMCFG2 c
+	.dbfield 8 MDMCFG1 c
+	.dbfield 9 MDMCFG0 c
+	.dbfield 10 CHANNR c
+	.dbfield 11 DEVIATN c
+	.dbfield 12 FREND1 c
+	.dbfield 13 FREND0 c
+	.dbfield 14 MCSM0 c
+	.dbfield 15 FOCCFG c
+	.dbfield 16 BSCFG c
+	.dbfield 17 AGCCTRL2 c
+	.dbfield 18 AGCCTRL1 c
+	.dbfield 19 AGCCTRL0 c
+	.dbfield 20 FSCAL3 c
+	.dbfield 21 FSCAL2 c
+	.dbfield 22 FSCAL1 c
+	.dbfield 23 FSCAL0 c
+	.dbfield 24 FSTEST c
+	.dbfield 25 TEST2 c
+	.dbfield 26 TEST1 c
+	.dbfield 27 TEST0 c
+	.dbfield 28 IOCFG2 c
+	.dbfield 29 IOCFG0 c
+	.dbfield 30 PKTCTRL1 c
+	.dbfield 31 PKTCTRL0 c
+	.dbfield 32 ADDR c
+	.dbfield 33 PKTLEN c
+	.dbend
+	.dbsym e rfSettings7680 _rfSettings7680 S[S_RF_SETTINGS]
+	.area text(rom, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.dbfunc e CC_SpiWr _CC_SpiWr fc
+;              i -> R20
+;         Status -> R22
+;            Cmd -> R16
+	.even
+_CC_SpiWr::
+	xcall push_gset2
+	.dbline -1
+	.dbline 106
+; #include "config.h"
+; #include "comm.h"
+; 
+; 
+; #define WAIT Delay_us(10)
+; 
+; #define MAXLEN 61
+; 
+; uchar Lqi;
+; uchar bCrcOk,Rssi,RfChkT,bRfChk;
+; uchar RfRunNo;
+; 				  
+; 
+; uchar  bRcvOk,bSendOk,IconRX,IconTX;
+; void ShowSendTime(void);
+; unsigned int RfT;
+; uchar SerData[62] = {0x0c,1,2,3,4,5,6,7,8,9};
+; uchar RFData[62]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//接收缓冲
+; int Sync0,Sync1;
+; 
+; extern unsigned char reset_rf;
+; extern unsigned char b_rf_check;
+; 
+; 
+; //使用频段不同时候，配置不同的无线参数
+; //定义一个配置无线模块的参数类
+; 
+; 
+; typedef struct S_RF_SETTINGS{
+;     BYTE FSCTRL1;   // Frequency synthesizer control.
+;     BYTE FSCTRL0;   // Frequency synthesizer control.
+;     BYTE FREQ2;     // Frequency control word, high byte.
+;     BYTE FREQ1;     // Frequency control word, middle byte.
+;     BYTE FREQ0;     // Frequency control word, low byte.
+;     BYTE MDMCFG4;   // Modem configuration.
+;     BYTE MDMCFG3;   // Modem configuration.
+;     BYTE MDMCFG2;   // Modem configuration.
+;     BYTE MDMCFG1;   // Modem configuration.
+;     BYTE MDMCFG0;   // Modem configuration.
+;     BYTE CHANNR;    // Channel number.
+;     BYTE DEVIATN;   // Modem deviation setting (when FSK modulation is enabled).
+;     BYTE FREND1;    // Front end RX configuration.
+;     BYTE FREND0;    // Front end RX configuration.
+;     BYTE MCSM0;     // Main Radio Control State Machine configuration.
+;     BYTE FOCCFG;    // Frequency Offset Compensation Configuration.
+;     BYTE BSCFG;     // Bit synchronization Configuration.
+;     BYTE AGCCTRL2;  // AGC control.
+; 	BYTE AGCCTRL1;  // AGC control.
+;     BYTE AGCCTRL0;  // AGC control.
+;     BYTE FSCAL3;    // Frequency synthesizer calibration.
+;     BYTE FSCAL2;    // Frequency synthesizer calibration.
+; 	BYTE FSCAL1;    // Frequency synthesizer calibration.
+;     BYTE FSCAL0;    // Frequency synthesizer calibration.
+;     BYTE FSTEST;    // Frequency synthesizer calibration control
+;     BYTE TEST2;     // Various test settings.
+;     BYTE TEST1;     // Various test settings.
+;     BYTE TEST0;     // Various test settings.
+;     BYTE IOCFG2;    // GDO2 output pin configuration
+;     BYTE IOCFG0;    // GDO0 output pin configuration
+;     BYTE PKTCTRL1;  // Packet automation control.
+;     BYTE PKTCTRL0;  // Packet automation control.
+;     BYTE ADDR;      // Device address.
+;     BYTE PKTLEN;    // Packet length.
+; }RF_SETTINGS ;
+; 
+; RF_SETTINGS rfSettings7680 = {
+;     0x0B,   // FSCTRL1   Frequency synthesizer control.
+;     0x00,   // FSCTRL0   Frequency synthesizer control.
+;     0x5C,   // FREQ2     Frequency control word, high byte.
+;     0x4E,   // FREQ1     Frequency control word, middle byte.
+;     0xDE,   // FREQ0     Frequency control word, low byte.
+;     0x7B,   // MDMCFG4   Modem configuration.
+;     0x83,   // MDMCFG3   Modem configuration.
+;     0x93,   // MDMCFG2   Modem configuration.
+;     0x23,   // MDMCFG1   Modem configuration.
+;     0xA4,   // MDMCFG0   Modem configuration.
+;     0x00,   // CHANNR    Channel number.
+;     0x44,   // DEVIATN   Modem deviation setting (when FSK modulation is enabled).
+;     0x56,   // FREND1    Front end RX configuration.
+;     0x10,   // FREND0    Front end RX configuration.
+;     0x18,   // MCSM0     Main Radio Control State Machine configuration.
+;     0x16,   // FOCCFG    Frequency Offset Compensation Configuration.
+;     0x6C,   // BSCFG     Bit synchronization Configuration.
+;     0x43,   // AGCCTRL2  AGC control.
+;     0x40,   // AGCCTRL1  AGC control.
+;     0x91,   // AGCCTRL0  AGC control.
+;     0xA9,   // FSCAL3    Frequency synthesizer calibration.
+;     0x0A,   // FSCAL2    Frequency synthesizer calibration.
+;     0x00,   // FSCAL1    Frequency synthesizer calibration.
+;     0x11,   // FSCAL0    Frequency synthesizer calibration.
+;     0x59,   // FSTEST    Frequency synthesizer calibration.
+;     0x88,   // TEST2     Various test settings.
+;     0x31,   // TEST1     Various test settings.
+;     0x0B,   // TEST0     Various test settings.
+;     0x29,   // IOCFG2    GDO2 output pin configuration.
+;     0x06,   // IOCFG0D   GDO0 output pin configuration. Refer to SmartRF?Studio User Manual for detailed pseudo register explanation.
+;     0x04,   // PKTCTRL1  Packet automation control.
+;     0x05,   // PKTCTRL0  Packet automation control.
+;     0x00,   // ADDR      Device address.
+;     0xFF    // PKTLEN    Packet length.
+; };
+; 
+; //********************************
+; //写1个字节的时序，同时读出1个字节
+; BYTE CC_SpiWr(BYTE Cmd)
+; {
+	.dbline 110
+;   uchar i;
+; #ifndef SPIWR
+; //用IO口线模拟SPI操作
+;    BYTE Status=0;
+	clr R22
+	.dbline 111
+;    for (i=0;i<8;i++)
+	clr R20
+	xjmp L5
+L2:
+	.dbline 112
+;    {  //in...
+	.dbline 113
+;       Status=Status<<1;
+	lsl R22
+	.dbline 117
+;       //if (CHKRFIN >0) 
+; 	  //if (SPI_MISO >0)
+; 
+; 	  if (RF433_MISO>0)
+	clr R2
+	in R24,0x16
+	andi R24,64
+	cp R2,R24
+	brsh L6
+	.dbline 118
+; 	      Status|=0x01;
+	ori R22,1
+L6:
+	.dbline 121
+;       //out...
+;      // if (Cmd>0x7f) //高位先出
+; 	 if (Cmd & 0x80)
+	sbrs R16,7
+	rjmp L8
+	.dbline 122
+;           {RF433_MOSI_UP;}//RFSDOUP;
+	.dbline 122
+	sbi 0x18,5
+	.dbline 122
+	.dbline 122
+	xjmp L9
+L8:
+	.dbline 124
+;    	  else
+;       	 {RF433_MOSI_DN;}//RFSDODN;
+	.dbline 124
+	cbi 0x18,5
+	.dbline 124
+	.dbline 124
+L9:
+	.dbline 126
+	nop
+	.dbline 127
+	sbi 0x18,7
+	.dbline 127
+	.dbline 129
+	nop
+	.dbline 130
+	cbi 0x18,7
+	.dbline 130
+	.dbline 132
+	lsl R16
+	.dbline 133
+L3:
+	.dbline 111
+	inc R20
+L5:
+	.dbline 111
+	cpi R20,8
+	brlo L2
+	.dbline 134
+;    	  //asm("nop"); asm("nop"); asm("nop"); asm("nop");asm("nop");
+; 	  NOP();
+; 	  RF433_SPCK_UP;//RFSCLUP;
+; 	  //asm("nop"); asm("nop"); asm("nop"); asm("nop");asm("nop");
+; 	  NOP();
+; 	  RF433_SPCK_DN;//RFSCLDN;
+; 	  
+; 	  Cmd=Cmd<<1;
+;    }	  	  
+;    return Status;
+	mov R16,R22
+	.dbline -2
+L1:
+	xcall pop_gset2
+	.dbline 0 ; func end
+	ret
+	.dbsym r i 20 c
+	.dbsym r Status 22 c
+	.dbsym r Cmd 16 c
+	.dbend
+	.dbfunc e CC_Rdy _CC_Rdy fV
+;              i -> R20
+	.even
+_CC_Rdy::
+	xcall push_gset1
+	.dbline -1
+	.dbline 149
+; #else
+; //直接使用AVR的SPI操作
+; BYTE i=0;
+;    SPDR=Cmd;
+;    while (((SPSR&(1<<SPIF))==0)&&(i<100))
+;    { i++;//!!避免SpiWr中断和主程序操作冲突引起的死机，实测i=4
+;      NOP();NOP();NOP();NOP();
+;    };
+;    return SPDR;
+; #endif   
+; }
+; //**********************************************************************************
+; //等待芯片SO脚输出低表示Ready
+; void CC_Rdy()
+; {
+	.dbline 151
+; 	BYTE i;
+;    for (i=0;i<10;i++)
+	clr R20
+	xjmp L14
+L11:
+	.dbline 152
+;    { 
+	.dbline 154
+;      //if (CHKRFIN==0) return; 
+; 	 if (RF433_MISO==0) return;
+	sbic 0x16,6
+	rjmp L15
+	.dbline 154
+	xjmp L10
+L15:
+	.dbline 155
+	ldi R16,200
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 156
+L12:
+	.dbline 151
+	inc R20
+L14:
+	.dbline 151
+	cpi R20,10
+	brlo L11
+	.dbline -2
+L10:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r i 20 c
+	.dbend
+	.dbfunc e CC_Cmd _CC_Cmd fc
+;         Status -> R20
+;            Cmd -> R20
+	.even
+_CC_Cmd::
+	xcall push_gset1
+	mov R20,R16
+	.dbline -1
+	.dbline 161
+;      Delay_us(200);//掉电是最大200uS，正常20nS
+;    }
+; }
+; //************************************************************************************
+; //写命令码
+; BYTE CC_Cmd(BYTE Cmd)
+; {
+	.dbline 164
+; 	BYTE Status;
+;     
+; 	RF433_CS_DN;
+	cbi 0x18,4
+	.dbline 164
+	.dbline 165
+; 	CC_Rdy();
+	xcall _CC_Rdy
+	.dbline 166
+; 	Status=CC_SpiWr(Cmd);
+	mov R16,R20
+	xcall _CC_SpiWr
+	mov R20,R16
+	.dbline 167
+; 	RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 167
+	.dbline 168
+;     WAIT;	
+	ldi R16,10
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 169
+; 	return Status;
+	mov R16,R20
+	.dbline -2
+L17:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r Status 20 c
+	.dbsym r Cmd 20 c
+	.dbend
+	.dbfunc e CC_WrReg _CC_WrReg fc
+;         Status -> R20
+;           Data -> R22
+;           Addr -> R20
+	.even
+_CC_WrReg::
+	xcall push_gset2
+	mov R22,R18
+	mov R20,R16
+	.dbline -1
+	.dbline 174
+; }
+; //*************************************************************************************
+; //指定地址，写配置字
+; BYTE CC_WrReg(BYTE Addr,BYTE Data)
+; {
+	.dbline 177
+; 	BYTE Status;
+; 
+;     RF433_CS_DN;
+	cbi 0x18,4
+	.dbline 177
+	.dbline 178
+; 	CC_Rdy();
+	xcall _CC_Rdy
+	.dbline 179
+; 	Status=CC_SpiWr(Addr);
+	mov R16,R20
+	xcall _CC_SpiWr
+	mov R20,R16
+	.dbline 180
+; 	CC_SpiWr(Data);
+	mov R16,R22
+	xcall _CC_SpiWr
+	.dbline 181
+; 	RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 181
+	.dbline 182
+; 	WAIT;
+	ldi R16,10
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 183
+; 	return Status;
+	mov R16,R20
+	.dbline -2
+L18:
+	xcall pop_gset2
+	.dbline 0 ; func end
+	ret
+	.dbsym r Status 20 c
+	.dbsym r Data 22 c
+	.dbsym r Addr 20 c
+	.dbend
+	.dbfunc e CC_WrRegs _CC_WrRegs fc
+;         Status -> R20
+;              i -> R22
+;          Count -> R10
+;            Buf -> R12,R13
+;           Addr -> R20
+	.even
+_CC_WrRegs::
+	xcall push_gset4
+	movw R12,R18
+	mov R20,R16
+	ldd R10,y+8
+	.dbline -1
+	.dbline 188
+; }
+; //************************************************************************************
+; //指定地址，连续写配置
+; BYTE CC_WrRegs(uchar Addr,uchar *Buf,uchar Count)
+; {
+	.dbline 191
+; 	BYTE Status,i;
+; 
+;     RF433_CS_DN;
+	cbi 0x18,4
+	.dbline 191
+	.dbline 192
+; 	CC_Rdy();
+	xcall _CC_Rdy
+	.dbline 193
+; 	Status=CC_SpiWr(Addr|0x40);
+	mov R16,R20
+	ori R16,64
+	xcall _CC_SpiWr
+	mov R20,R16
+	.dbline 194
+; 	for (i=0;i<Count;i++)
+	clr R22
+	xjmp L23
+L20:
+	.dbline 195
+	.dbline 195
+	mov R30,R22
+	clr R31
+	add R30,R12
+	adc R31,R13
+	ldd R16,z+0
+	xcall _CC_SpiWr
+	.dbline 196
+L21:
+	.dbline 194
+	inc R22
+L23:
+	.dbline 194
+	cp R22,R10
+	brlo L20
+	.dbline 197
+; 	{ CC_SpiWr(Buf[i]);
+; 	}
+; 	RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 197
+	.dbline 198
+; 	WAIT;
+	ldi R16,10
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 199
+; 	return Status;
+	mov R16,R20
+	.dbline -2
+L19:
+	xcall pop_gset4
+	.dbline 0 ; func end
+	ret
+	.dbsym r Status 20 c
+	.dbsym r i 22 c
+	.dbsym r Count 10 c
+	.dbsym r Buf 12 pc
+	.dbsym r Addr 20 c
+	.dbend
+	.dbfunc e CC_RdStatus _CC_RdStatus fc
+;           Data -> R20
+;           Addr -> R22
+	.even
+_CC_RdStatus::
+	xcall push_gset2
+	mov R22,R16
+	.dbline -1
+	.dbline 204
+; }
+; //*************************************************************************************
+; //读状态寄存器
+; BYTE CC_RdStatus(BYTE Addr)
+; {
+	.dbline 205
+; 	BYTE Data=0;   
+	clr R20
+	.dbline 207
+;     
+; 	RF433_CS_DN;
+	cbi 0x18,4
+	.dbline 207
+	.dbline 208
+; 	CC_Rdy();
+	xcall _CC_Rdy
+	.dbline 209
+; 	Data=CC_SpiWr(Addr|0xC0);//
+	mov R16,R22
+	ori R16,192
+	xcall _CC_SpiWr
+	.dbline 210
+; 	Data=CC_SpiWr(0);
+	clr R16
+	xcall _CC_SpiWr
+	mov R20,R16
+	.dbline 211
+; 	RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 211
+	.dbline 212
+; 	WAIT;
+	ldi R16,10
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 213
+; 	return Data;
+	mov R16,R20
+	.dbline -2
+L24:
+	xcall pop_gset2
+	.dbline 0 ; func end
+	ret
+	.dbsym r Data 20 c
+	.dbsym r Addr 22 c
+	.dbend
+	.dbfunc e CC_RdReg _CC_RdReg fc
+;           Data -> R20
+;           Addr -> R20
+	.even
+_CC_RdReg::
+	xcall push_gset1
+	mov R20,R16
+	.dbline -1
+	.dbline 218
+; }
+; //*****************************************************************************************
+; //读配置
+; BYTE CC_RdReg(BYTE Addr)
+; {
+	.dbline 221
+; 	BYTE Data;   
+;     
+; 	RF433_CS_DN;
+	cbi 0x18,4
+	.dbline 221
+	.dbline 222
+; 	CC_Rdy();
+	xcall _CC_Rdy
+	.dbline 223
+; 	Data=CC_SpiWr(Addr|0x80);
+	mov R16,R20
+	ori R16,128
+	xcall _CC_SpiWr
+	.dbline 224
+; 	Data=CC_SpiWr(0);
+	clr R16
+	xcall _CC_SpiWr
+	mov R20,R16
+	.dbline 225
+; 	RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 225
+	.dbline 226
+; 	WAIT;
+	ldi R16,10
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 227
+; 	return Data;
+	mov R16,R20
+	.dbline -2
+L25:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r Data 20 c
+	.dbsym r Addr 20 c
+	.dbend
+	.dbfunc e CC_RdRegs _CC_RdRegs fc
+;         Status -> R20
+;              i -> R22
+;          Count -> R10
+;            Buf -> R12,R13
+;           Addr -> R20
+	.even
+_CC_RdRegs::
+	xcall push_gset4
+	movw R12,R18
+	mov R20,R16
+	ldd R10,y+8
+	.dbline -1
+	.dbline 232
+; }
+; //*******************************************************************************************
+; //连续读配置字
+; BYTE CC_RdRegs(uchar Addr,uchar *Buf,uchar Count)
+; {
+	.dbline 235
+; 	BYTE Status,i;
+; 
+;     RF433_CS_DN;
+	cbi 0x18,4
+	.dbline 235
+	.dbline 236
+; 	CC_Rdy();
+	xcall _CC_Rdy
+	.dbline 237
+; 	Status=CC_SpiWr(Addr|0xC0);//******
+	mov R16,R20
+	ori R16,192
+	xcall _CC_SpiWr
+	mov R20,R16
+	.dbline 238
+; 	for (i=0;i<Count;i++)
+	clr R22
+	xjmp L30
+L27:
+	.dbline 239
+	.dbline 240
+	clr R16
+	xcall _CC_SpiWr
+	mov R30,R22
+	clr R31
+	add R30,R12
+	adc R31,R13
+	std z+0,R16
+	.dbline 241
+L28:
+	.dbline 238
+	inc R22
+L30:
+	.dbline 238
+	cp R22,R10
+	brlo L27
+	.dbline 242
+; 	{ 
+; 	 Buf[i]=CC_SpiWr(0); //******
+; 	}
+; 	RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 242
+	.dbline 243
+; 	WAIT;
+	ldi R16,10
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 244
+; 	return Status;
+	mov R16,R20
+	.dbline -2
+L26:
+	xcall pop_gset4
+	.dbline 0 ; func end
+	ret
+	.dbsym r Status 20 c
+	.dbsym r i 22 c
+	.dbsym r Count 10 c
+	.dbsym r Buf 12 pc
+	.dbsym r Addr 20 c
+	.dbend
+	.dbfunc e CC_GetStatus _CC_GetStatus fc
+	.even
+_CC_GetStatus::
+	.dbline -1
+	.dbline 250
+; 
+; }
+; //******************************************************************************************
+; //读状态
+; BYTE CC_GetStatus()
+; {
+	.dbline 251
+;   return CC_Cmd(CCxxx0_SNOP);
+	ldi R16,61
+	xcall _CC_Cmd
+	.dbline -2
+L31:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e CC_RESET _CC_RESET fV
+	.even
+_CC_RESET::
+	.dbline -1
+	.dbline 256
+; }
+; //**********************************************************************************
+; //芯片上电复位
+; void CC_RESET()
+; {
+	.dbline 257
+;    RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 257
+	.dbline 258
+;    RF433_CS_DN;
+	cbi 0x18,4
+	.dbline 258
+	.dbline 259
+;    RF433_CS_UP;
+	sbi 0x18,4
+	.dbline 259
+	.dbline 260
+;    Delay_us(500);//>40us
+	ldi R16,500
+	ldi R17,1
+	xcall _Delay_us
+	.dbline 262
+;    
+;    CC_Cmd(CCxxx0_SRES);
+	ldi R16,48
+	xcall _CC_Cmd
+	.dbline -2
+L32:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e CC_RfConfig _CC_RfConfig fV
+;    pRfSettings -> R20,R21
+	.even
+_CC_RfConfig::
+	xcall push_gset1
+	movw R20,R16
+	.dbline -1
+	.dbline 267
+; }
+; //***********************************************************************************
+; //配置芯片特性和无线参数
+; void CC_RfConfig(RF_SETTINGS *pRfSettings) 
+; {    // Write register settings
+	.dbline 268
+;     CC_WrReg(CCxxx0_FSCTRL1,  pRfSettings->FSCTRL1);
+	movw R30,R20
+	ldd R18,z+0
+	ldi R16,11
+	xcall _CC_WrReg
+	.dbline 269
+;     CC_WrReg(CCxxx0_FSCTRL0,  pRfSettings->FSCTRL0);
+	movw R30,R20
+	ldd R18,z+1
+	ldi R16,12
+	xcall _CC_WrReg
+	.dbline 270
+;     CC_WrReg(CCxxx0_FREQ2,    pRfSettings->FREQ2);
+	movw R30,R20
+	ldd R18,z+2
+	ldi R16,13
+	xcall _CC_WrReg
+	.dbline 271
+;     CC_WrReg(CCxxx0_FREQ1,    pRfSettings->FREQ1);
+	movw R30,R20
+	ldd R18,z+3
+	ldi R16,14
+	xcall _CC_WrReg
+	.dbline 272
+;     CC_WrReg(CCxxx0_FREQ0,    pRfSettings->FREQ0);
+	movw R30,R20
+	ldd R18,z+4
+	ldi R16,15
+	xcall _CC_WrReg
+	.dbline 273
+;     CC_WrReg(CCxxx0_MDMCFG4,  pRfSettings->MDMCFG4);
+	movw R30,R20
+	ldd R18,z+5
+	ldi R16,16
+	xcall _CC_WrReg
+	.dbline 274
+;     CC_WrReg(CCxxx0_MDMCFG3,  pRfSettings->MDMCFG3);
+	movw R30,R20
+	ldd R18,z+6
+	ldi R16,17
+	xcall _CC_WrReg
+	.dbline 275
+;     CC_WrReg(CCxxx0_MDMCFG2,  pRfSettings->MDMCFG2);
+	movw R30,R20
+	ldd R18,z+7
+	ldi R16,18
+	xcall _CC_WrReg
+	.dbline 276
+;     CC_WrReg(CCxxx0_MDMCFG1,  pRfSettings->MDMCFG1);
+	movw R30,R20
+	ldd R18,z+8
+	ldi R16,19
+	xcall _CC_WrReg
+	.dbline 277
+;     CC_WrReg(CCxxx0_MDMCFG0,  pRfSettings->MDMCFG0);
+	movw R30,R20
+	ldd R18,z+9
+	ldi R16,20
+	xcall _CC_WrReg
+	.dbline 278
+;     CC_WrReg(CCxxx0_CHANNR,   pRfSettings->CHANNR);
+	movw R30,R20
+	ldd R18,z+10
+	ldi R16,10
+	xcall _CC_WrReg
+	.dbline 279
+;     CC_WrReg(CCxxx0_DEVIATN,  pRfSettings->DEVIATN);
+	movw R30,R20
+	ldd R18,z+11
+	ldi R16,21
+	xcall _CC_WrReg
+	.dbline 280
+;     CC_WrReg(CCxxx0_FREND1,   pRfSettings->FREND1);
+	movw R30,R20
+	ldd R18,z+12
+	ldi R16,33
+	xcall _CC_WrReg
+	.dbline 281
+;     CC_WrReg(CCxxx0_FREND0,   pRfSettings->FREND0);
+	movw R30,R20
+	ldd R18,z+13
+	ldi R16,34
+	xcall _CC_WrReg
+	.dbline 282
+;     CC_WrReg(CCxxx0_MCSM0 ,   pRfSettings->MCSM0 );
+	movw R30,R20
+	ldd R18,z+14
+	ldi R16,24
+	xcall _CC_WrReg
+	.dbline 283
+;     CC_WrReg(CCxxx0_FOCCFG,   pRfSettings->FOCCFG);
+	movw R30,R20
+	ldd R18,z+15
+	ldi R16,25
+	xcall _CC_WrReg
+	.dbline 284
+;     CC_WrReg(CCxxx0_BSCFG,    pRfSettings->BSCFG);
+	movw R30,R20
+	ldd R18,z+16
+	ldi R16,26
+	xcall _CC_WrReg
+	.dbline 285
+;     CC_WrReg(CCxxx0_AGCCTRL2, pRfSettings->AGCCTRL2);
+	movw R30,R20
+	ldd R18,z+17
+	ldi R16,27
+	xcall _CC_WrReg
+	.dbline 286
+; 	CC_WrReg(CCxxx0_AGCCTRL1, pRfSettings->AGCCTRL1);
+	movw R30,R20
+	ldd R18,z+18
+	ldi R16,28
+	xcall _CC_WrReg
+	.dbline 287
+;     CC_WrReg(CCxxx0_AGCCTRL0, pRfSettings->AGCCTRL0);
+	movw R30,R20
+	ldd R18,z+19
+	ldi R16,29
+	xcall _CC_WrReg
+	.dbline 288
+;     CC_WrReg(CCxxx0_FSCAL3,   pRfSettings->FSCAL3);
+	movw R30,R20
+	ldd R18,z+20
+	ldi R16,35
+	xcall _CC_WrReg
+	.dbline 289
+;     CC_WrReg(CCxxx0_FSCAL2,   pRfSettings->FSCAL2);
+	movw R30,R20
+	ldd R18,z+21
+	ldi R16,36
+	xcall _CC_WrReg
+	.dbline 290
+; 	CC_WrReg(CCxxx0_FSCAL1,   pRfSettings->FSCAL1);
+	movw R30,R20
+	ldd R18,z+22
+	ldi R16,37
+	xcall _CC_WrReg
+	.dbline 291
+;     CC_WrReg(CCxxx0_FSCAL0,   pRfSettings->FSCAL0);
+	movw R30,R20
+	ldd R18,z+23
+	ldi R16,38
+	xcall _CC_WrReg
+	.dbline 292
+;     CC_WrReg(CCxxx0_FSTEST,   pRfSettings->FSTEST);
+	movw R30,R20
+	ldd R18,z+24
+	ldi R16,41
+	xcall _CC_WrReg
+	.dbline 293
+;     CC_WrReg(CCxxx0_TEST2,    pRfSettings->TEST2);
+	movw R30,R20
+	ldd R18,z+25
+	ldi R16,44
+	xcall _CC_WrReg
+	.dbline 294
+;     CC_WrReg(CCxxx0_TEST1,    pRfSettings->TEST1);
+	movw R30,R20
+	ldd R18,z+26
+	ldi R16,45
+	xcall _CC_WrReg
+	.dbline 295
+;     CC_WrReg(CCxxx0_TEST0,    pRfSettings->TEST0);
+	movw R30,R20
+	ldd R18,z+27
+	ldi R16,46
+	xcall _CC_WrReg
+	.dbline 296
+;     CC_WrReg(CCxxx0_IOCFG2,   pRfSettings->IOCFG2);
+	movw R30,R20
+	ldd R18,z+28
+	clr R16
+	xcall _CC_WrReg
+	.dbline 297
+;     CC_WrReg(CCxxx0_IOCFG0,   pRfSettings->IOCFG0);    
+	movw R30,R20
+	ldd R18,z+29
+	ldi R16,2
+	xcall _CC_WrReg
+	.dbline 298
+;     CC_WrReg(CCxxx0_PKTCTRL1, pRfSettings->PKTCTRL1);
+	movw R30,R20
+	ldd R18,z+30
+	ldi R16,7
+	xcall _CC_WrReg
+	.dbline 299
+;     CC_WrReg(CCxxx0_PKTCTRL0, pRfSettings->PKTCTRL0);
+	movw R30,R20
+	ldd R18,z+31
+	ldi R16,8
+	xcall _CC_WrReg
+	.dbline 300
+;     CC_WrReg(CCxxx0_ADDR,     pRfSettings->ADDR);
+	movw R30,R20
+	ldd R18,z+32
+	ldi R16,9
+	xcall _CC_WrReg
+	.dbline 301
+;     CC_WrReg(CCxxx0_PKTLEN,   pRfSettings->PKTLEN);
+	movw R30,R20
+	ldd R18,z+33
+	ldi R16,6
+	xcall _CC_WrReg
+	.dbline -2
+L33:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r pRfSettings 20 pS[S_RF_SETTINGS]
+	.dbend
+	.dbfunc e CC_PaTable _CC_PaTable fV
+;        paTable -> R20
+	.even
+_CC_PaTable::
+	xcall push_gset1
+	mov R20,R16
+	.dbline -1
+	.dbline 306
+; }
+; //****************************************************************************************
+; //设置射频功率
+; void CC_PaTable(BYTE paTable)
+; {
+	.dbline 307
+;   CC_WrReg(CCxxx0_PATABLE, paTable);
+	mov R18,R20
+	ldi R16,62
+	xcall _CC_WrReg
+	.dbline -2
+L34:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r paTable 20 c
+	.dbend
+	.dbfunc e CC_Chan _CC_Chan fV
+;           Chan -> R20
+	.even
+_CC_Chan::
+	xcall push_gset1
+	mov R20,R16
+	.dbline -1
+	.dbline 312
+; }
+; //****************************************************************************************
+; //设置频道
+; void CC_Chan(BYTE Chan)
+; {
+	.dbline 313
+;   CC_Idle();//为方便
+	ldi R16,54
+	xcall _CC_Cmd
+	.dbline 314
+;   CC_WrReg(CCxxx0_CHANNR,Chan);
+	mov R18,R20
+	ldi R16,10
+	xcall _CC_WrReg
+	.dbline -2
+L35:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r Chan 20 c
+	.dbend
+	.dbfunc e CC_FEC _CC_FEC fV
+;            Reg -> R20
+;             On -> R22
+	.even
+_CC_FEC::
+	xcall push_gset2
+	mov R22,R16
+	.dbline -1
+	.dbline 319
+; }
+; //****************************************************************************************
+; //打开或关闭FEC前向纠错
+; void CC_FEC(BYTE On)
+; {
+	.dbline 321
+; 	BYTE Reg;
+;   Reg=CC_RdReg(CCxxx0_MDMCFG1);
+	ldi R16,19
+	xcall _CC_RdReg
+	mov R20,R16
+	.dbline 322
+;   if (On==1) 
+	cpi R22,1
+	brne L37
+	.dbline 323
+;      CC_WrReg(CCxxx0_MDMCFG1, Reg | 0x80);
+	mov R18,R20
+	ori R18,128
+	ldi R16,19
+	xcall _CC_WrReg
+	xjmp L38
+L37:
+	.dbline 325
+	mov R18,R20
+	andi R18,127
+	ldi R16,19
+	xcall _CC_WrReg
+L38:
+	.dbline -2
+L36:
+	xcall pop_gset2
+	.dbline 0 ; func end
+	ret
+	.dbsym r Reg 20 c
+	.dbsym r On 22 c
+	.dbend
+	.dbfunc e CC_WHITE _CC_WHITE fV
+;            Reg -> R20
+;             On -> R22
+	.even
+_CC_WHITE::
+	xcall push_gset2
+	mov R22,R16
+	.dbline -1
+	.dbline 330
+;   else
+;   	 CC_WrReg(CCxxx0_MDMCFG1, Reg & 0x7F);
+; }
+; //*****************************************************************************************
+; //打开或关闭WHITE数据功能（使数据01均衡）
+; void CC_WHITE(BYTE On)
+; {
+	.dbline 332
+; 	BYTE Reg;
+;   Reg=CC_RdReg(CCxxx0_PKTCTRL0);
+	ldi R16,8
+	xcall _CC_RdReg
+	mov R20,R16
+	.dbline 333
+;   if (On==1) 
+	cpi R22,1
+	brne L40
+	.dbline 334
+;      CC_WrReg(CCxxx0_PKTCTRL0, Reg | 0x40);
+	mov R18,R20
+	ori R18,64
+	ldi R16,8
+	xcall _CC_WrReg
+	xjmp L41
+L40:
+	.dbline 336
+	mov R18,R20
+	andi R18,191
+	ldi R16,8
+	xcall _CC_WrReg
+L41:
+	.dbline -2
+L39:
+	xcall pop_gset2
+	.dbline 0 ; func end
+	ret
+	.dbsym r Reg 20 c
+	.dbsym r On 22 c
+	.dbend
+	.dbfunc e CC_ClrRx _CC_ClrRx fV
+	.even
+_CC_ClrRx::
+	.dbline -1
+	.dbline 343
+;   else
+;   	 CC_WrReg(CCxxx0_PKTCTRL0, Reg & 0xBF);
+; }
+; 
+; 
+; //****************************************************************************************
+; //清除接收缓冲区和接收错误相关标志
+; void CC_ClrRx() 
+; {
+	.dbline 344
+;     CC_Idle();//!!必须在Idle状态
+	ldi R16,54
+	xcall _CC_Cmd
+	.dbline 345
+; 	CC_Cmd(CCxxx0_SFRX);
+	ldi R16,58
+	xcall _CC_Cmd
+	.dbline -2
+L42:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e CC_ClrTx _CC_ClrTx fV
+	.even
+_CC_ClrTx::
+	.dbline -1
+	.dbline 351
+; }	  
+; 
+; //**********************************************************************************************
+; //清除发送缓冲区和发送错误相关标志
+; void  CC_ClrTx() 	
+; {
+	.dbline 352
+;   CC_Idle();//!!必须在Idle状态
+	ldi R16,54
+	xcall _CC_Cmd
+	.dbline 353
+;   CC_Cmd(CCxxx0_SFTX);
+	ldi R16,59
+	xcall _CC_Cmd
+	.dbline -2
+L43:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e CC_Init _CC_Init fV
+	.even
+_CC_Init::
+	.dbline -1
+	.dbline 359
+; }
+; 
+; //**********************************************************************************
+; //无线模块初始化
+; void CC_Init()
+; {
+	.dbline 360
+;   CLI();
+	cli
+	.dbline 361
+;   CC_RESET();
+	xcall _CC_RESET
+	.dbline 362
+;   CC_RfConfig(&rfSettings7680);
+	ldi R16,<_rfSettings7680
+	ldi R17,>_rfSettings7680
+	xcall _CC_RfConfig
+	.dbline 372
+; 
+;   //CC_RfConfig(&rfSettings1200);
+;  // CC_WrReg(CCxxx0_SYNC1,0xa4 );//缺省值是D391
+;  // CC_WrReg(CCxxx0_SYNC0,0x25 );
+;   //CC_WrReg(CCxxx0_SYNC1,0x08 );//缺省值是D391
+;   //CC_WrReg(CCxxx0_SYNC0,0x00 );
+;   //CC_WrReg(CCxxx0_SYNC1,Sync0 );
+;   //CC_WrReg(CCxxx0_SYNC0,Sync1 );
+; 
+;   CC_PaTable(PAMAX);
+	ldi R16,254
+	xcall _CC_PaTable
+	.dbline 374
+; 
+;    CC_WrReg(CCxxx0_MCSM1,0x00 );//0x0f取消CCA，收发总回到RX 不能，否则不能自动校正频率
+	clr R18
+	ldi R16,23
+	xcall _CC_WrReg
+	.dbline 378
+;   //CC_WrReg(CCxxx0_MCSM1,0x30 );//复位值0x30 有CCA，收发回IDLE
+;  // CC_WHITE(1);
+;  
+;   CC_FEC(1);
+	ldi R16,1
+	xcall _CC_FEC
+	.dbline 379
+;   Delay_ms(20);
+	ldi R16,20
+	ldi R17,0
+	xcall _Delay_ms
+	.dbline 380
+;   CC_RxOn();
+	ldi R16,52
+	xcall _CC_Cmd
+	.dbline 384
+;   //GIFR=0xE0;//clr int
+;   
+;   //CC_Test();
+;   SEI();
+	sei
+	.dbline -2
+L44:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+_i::
+	.blkb 1
+	.area idata
+	.byte 0
+	.area data(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.dbsym e i _i c
+	.area text(rom, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+	.dbfunc e CC_Test _CC_Test fV
+	.even
+_CC_Test::
+	.dbline -1
+	.dbline 393
+; }
+; 
+; 
+; 
+; //**************************************************************************************
+;  volatile BYTE i=0;
+; //无线模块功能测试，硬件调试用
+; void CC_Test()
+; {
+	.dbline 395
+;   //!!必须注明volatile，否则优化，i的值不对
+;   i=CC_RdStatus(CCxxx0_VERSION);//0x03
+	ldi R16,49
+	xcall _CC_RdStatus
+	sts _i,R16
+	.dbline 396
+;   i=CC_RdReg(CCxxx0_PKTCTRL0);//0x05
+	ldi R16,8
+	xcall _CC_RdReg
+	sts _i,R16
+	.dbline 397
+;   i=CC_RdReg(CCxxx0_PKTLEN);//0xff
+	ldi R16,6
+	xcall _CC_RdReg
+	sts _i,R16
+	.dbline 398
+;   i=CC_GetStatus();
+	xcall _CC_GetStatus
+	sts _i,R16
+	.dbline 399
+;   CC_Idle();
+	ldi R16,54
+	xcall _CC_Cmd
+	.dbline 400
+;   i=CC_GetStatus();
+	xcall _CC_GetStatus
+	sts _i,R16
+	.dbline 401
+;   CC_RxOn();
+	ldi R16,52
+	xcall _CC_Cmd
+	.dbline -2
+L45:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e CC_SendPacket _CC_SendPacket fV
+;           size -> R22
+;       txBuffer -> R20,R21
+	.even
+_CC_SendPacket::
+	xcall push_gset2
+	mov R22,R18
+	movw R20,R16
+	sbiw R28,1
+	.dbline -1
+	.dbline 406
+; }
+; //**************************************************************************************
+; //发送数据包，缓冲区中第1字节是长度
+; void CC_SendPacket(uchar *txBuffer, uchar size) 
+; {
+	.dbline 415
+; 
+;     //TCNT1=0;	
+; 	//CC_Idle();//不能直接从RX状态到TX状态?可以，但约1/10概率没有切换到TX状态－－－CCA的原因？
+;     /*i=(CC_GetStatus()>>4);
+; 	if (i>=2)
+; 	{ CC_Idle();
+; 	}*/
+; 	
+; 	CC_ClrTx();//v1.1保证TxBYTES无以前字节
+	xcall _CC_ClrTx
+	.dbline 417
+; 	
+;     CC_WrReg(CCxxx0_TXFIFO, size);//len
+	mov R18,R22
+	ldi R16,63
+	xcall _CC_WrReg
+	.dbline 418
+; 	CC_WrRegs(CCxxx0_TXFIFO, txBuffer, size);//***
+	std y+0,R22
+	movw R18,R20
+	ldi R16,63
+	xcall _CC_WrRegs
+	.dbline 419
+; 	CC_Cmd(CCxxx0_STX);
+	ldi R16,53
+	xcall _CC_Cmd
+	.dbline 422
+; 	
+;  //RfT=TCNT1;//测试耗时
+; 	bSendOk=0;
+	clr R2
+	sts _bSendOk,R2
+	.dbline -2
+L46:
+	adiw R28,1
+	xcall pop_gset2
+	.dbline 0 ; func end
+	ret
+	.dbsym r size 22 c
+	.dbsym r txBuffer 20 pc
+	.dbend
+	.dbfunc e CC_RdPacket _CC_RdPacket fV
+;           iLen -> R20
+	.even
+_CC_RdPacket::
+	xcall push_gset1
+	sbiw R28,1
+	.dbline -1
+	.dbline 429
+; 	//reset_rf=2;b_rf_check=0;//40ms
+; }
+; 
+; //*************************************************************************************************
+; //读出接收的数据，和LQI,RSSI，并判断CrcOk
+; void CC_RdPacket()
+; {
+	.dbline 437
+; 
+;     uchar iLen;
+; 	 //TCNT1=0;
+; 	 //iLen=CC_RdStatus(CCxxx0_RXBYTES) & 0x7f;//read RxFIFO Nums
+; 	 //FIFO中总数据字节，动态变化
+;      
+; 	 // Read length byte
+;      iLen= CC_RdReg(CCxxx0_RXFIFO);//第一字节是Len 数据包长度
+	ldi R16,63
+	xcall _CC_RdReg
+	mov R20,R16
+	.dbline 438
+;      if (iLen==0) goto RXERR; 
+	tst R16
+	brne L48
+	.dbline 438
+	xjmp L50
+L48:
+	.dbline 439
+; 	 if (iLen>MAXLEN) goto RXERR;//iLen=MAXLEN;
+	ldi R24,61
+	cp R24,R20
+	brsh L51
+	.dbline 439
+	xjmp L50
+L51:
+	.dbline 442
+; 	 
+;      // Read data from RX FIFO and store in rxBuffer
+; 	 SerData[0]=iLen;    //数据包长度
+	sts _SerData,R20
+	.dbline 444
+;    
+;      CC_RdRegs(CCxxx0_RXFIFO, SerData+1, iLen); //读数据
+	std y+0,R20
+	ldi R18,<_SerData+1
+	ldi R19,>_SerData+1
+	ldi R16,63
+	xcall _CC_RdRegs
+	.dbline 447
+;    
+;      // Read the 2 appended status bytes (status[0] = RSSI, status[1] = LQI)
+;      Rssi=CC_RdReg(CCxxx0_RXFIFO); 
+	ldi R16,63
+	xcall _CC_RdReg
+	sts _Rssi,R16
+	.dbline 449
+; 
+;      Lqi=CC_RdReg(CCxxx0_RXFIFO);
+	ldi R16,63
+	xcall _CC_RdReg
+	sts _Lqi,R16
+	.dbline 451
+;      
+; 	 if (Lqi>0x80) //80
+	ldi R24,128
+	cp R24,R16
+	brsh L54
+	.dbline 452
+; 	 {  
+	.dbline 453
+; 	    bCrcOk=1;// MSB of LQI is the CRC_OK bit ***
+	ldi R24,1
+	sts _bCrcOk,R24
+	.dbline 454
+; 	    bRcvOk=TRUE;//IconRX=1;
+	sts _bRcvOk,R24
+	.dbline 456
+; 		//abcd++;
+; 	 }
+	xjmp L55
+L54:
+	.dbline 458
+; 	// RcvOk=1;
+; 	   else bCrcOk=0;
+	clr R2
+	sts _bCrcOk,R2
+L55:
+	.dbline 461
+;     	
+; 	 
+; 	 iLen=CC_RdStatus(CCxxx0_RXBYTES) & 0x7f;
+	ldi R16,59
+	xcall _CC_RdStatus
+	mov R20,R16
+	andi R20,127
+	.dbline 463
+; 	 //RfT=TCNT1;//测试耗时
+; 	 if (iLen==0) 
+	brne L56
+	.dbline 464
+; 		 return;
+	xjmp L47
+L56:
+L50:
+	.dbline 467
+; 	 
+; RXERR:	 //应该为0，不为0就不对，要清除RxFiFo
+; 	 CC_ClrRx();
+	xcall _CC_ClrRx
+	.dbline 469
+; 	 //iLen=CC_RdStatus(CCxxx0_RXBYTES) & 0x7f;
+; 	 bRcvOk=0;
+	clr R2
+	sts _bRcvOk,R2
+	.dbline 470
+; 	 bCrcOk=0;
+	sts _bCrcOk,R2
+	.dbline -2
+L47:
+	adiw R28,1
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r iLen 20 c
+	.dbend
+	.dbfunc e CC_RssiCh _CC_RssiCh fc
+;           rssi -> R16
+	.even
+_CC_RssiCh::
+	.dbline -1
+	.dbline 476
+; 	 
+; }			
+; //*********************************************************************************************
+; //把信号强度RSSI值转换成dB值
+; BYTE CC_RssiCh(BYTE rssi)
+; {//输出值是正值，但都是负的dBm，例如返回值是55是-55dBm
+	.dbline 477
+;   if (rssi>=128)
+	cpi R16,128
+	brlo L59
+	.dbline 478
+;   { 
+	.dbline 479
+; 	  return (128+RSSI0-(rssi>>1));
+	mov R2,R16
+	clr R3
+	asr R3
+	ror R2
+	ldi R16,200
+	sub R16,R2
+	sbc R17,R3
+	xjmp L58
+L59:
+	.dbline 482
+;   }
+;   else
+;   { 
+	.dbline 483
+; 	  return (RSSI0-(rssi>>1));
+	mov R2,R16
+	lsr R2
+	ldi R16,72
+	sub R16,R2
+	.dbline -2
+L58:
+	.dbline 0 ; func end
+	ret
+	.dbsym r rssi 16 c
+	.dbend
+	.dbfunc e CC_Rssi _CC_Rssi fc
+	.even
+_CC_Rssi::
+	.dbline -1
+	.dbline 490
+;   }
+; }
+; 
+; //*************************************************************************************
+; //读信号强度RSSI值
+; BYTE CC_Rssi()
+; {
+	.dbline 491
+;   return CC_RdStatus(CCxxx0_RSSI);
+	ldi R16,52
+	xcall _CC_RdStatus
+	.dbline -2
+L61:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e CC_PackStatus _CC_PackStatus fc
+	.even
+_CC_PackStatus::
+	.dbline -1
+	.dbline 498
+; }
+; 
+; 
+; //**************************************************************************************
+; //读打包状态寄存器
+; BYTE CC_PackStatus()
+; {
+	.dbline 499
+;   return CC_RdStatus(CCxxx0_PKTSTATUS);
+	ldi R16,56
+	xcall _CC_RdStatus
+	.dbline -2
+L62:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e CC_CheckCCA _CC_CheckCCA fc
+;              i -> R20
+	.even
+_CC_CheckCCA::
+	xcall push_gset1
+	.dbline -1
+	.dbline 507
+;   //bit0-bit7 GDO0,GDO1,GDO2,SYNC,  CCA,PQT,CS,CRCOK
+;   //如果MCSM1.CCA＝0没有使用CCA的话，CCA指示位总为1，
+;   //如果使用CCA，CCA和CS位就相反
+; }
+; //***********************************************************************************
+; //用CCA判断是否有信道冲突
+; BYTE CC_CheckCCA()
+; {
+	.dbline 510
+; 	BYTE i;
+;   
+; 	i=CC_RdStatus(CCxxx0_PKTSTATUS);
+	ldi R16,56
+	xcall _CC_RdStatus
+	mov R20,R16
+	.dbline 516
+;   //bit0-bit7 GDO0,GDO1,GDO2,SYNC,  CCA,PQT,CS,CRCOK
+;   //如果MCSM1.CCA＝0没有使用CCA的话，CCA指示位总为1－－必须使能CCA!!
+;   //如果使用CCA，CCA和CS位就相反
+;   //if (CHK(i,6)==0)//使用CS指示，效果相同
+; //  if CHK(i,4) //使用CCA指示
+;   if ((i & 4) ==4)
+	mov R24,R20
+	andi R24,4
+	cpi R24,4
+	brne L64
+	.dbline 517
+;     return 1;
+	ldi R16,1
+	xjmp L63
+L64:
+	.dbline 519
+;   else
+;     return 0;
+	clr R16
+	.dbline -2
+L63:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r i 20 c
+	.dbend
+	.dbfunc e RfChk _RfChk fV
+;              i -> R20
+	.even
+_RfChk::
+	xcall push_gset1
+	.dbline -1
+	.dbline 524
+; }
+; //***************************************************************************************
+; //检测无线芯片是否死机
+; void RfChk()
+; {
+	.dbline 526
+;    BYTE i;
+;    CLI();
+	cli
+	.dbline 527
+;    i=(CC_GetStatus()>>4);
+	xcall _CC_GetStatus
+	mov R20,R16
+	swap R20
+	andi R20,#0x0F
+	.dbline 528
+;    if (i!=1)//0IDLE 1RX 2TX 3FSTXON 4CALI 5SETT 6RX_OVER 7TX_UNDER
+	cpi R20,1
+	breq L67
+	.dbline 529
+;    { 
+	.dbline 530
+; 	  CC_Idle();
+	ldi R16,54
+	xcall _CC_Cmd
+	.dbline 531
+; 	  Delay_us(100);
+	ldi R16,100
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 532
+; 	  CC_Cmd(CCxxx0_SFRX);
+	ldi R16,58
+	xcall _CC_Cmd
+	.dbline 533
+; 	  Delay_us(100);
+	ldi R16,100
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 534
+; 	  CC_Cmd(CCxxx0_SFTX);
+	ldi R16,59
+	xcall _CC_Cmd
+	.dbline 535
+; 	  Delay_us(100);
+	ldi R16,100
+	ldi R17,0
+	xcall _Delay_us
+	.dbline 536
+; 	  CC_RxOn();
+	ldi R16,52
+	xcall _CC_Cmd
+	.dbline 537
+; 	}
+L67:
+	.dbline 538
+;    bSendOk=1;//!!	
+	ldi R24,1
+	sts _bSendOk,R24
+	.dbline 539
+;    SEI();
+	sei
+	.dbline -2
+L66:
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym r i 20 c
+	.dbend
+	.dbfunc e ChkRfState _ChkRfState fV
+;              i -> y+0
+	.even
+_ChkRfState::
+	xcall push_gset1
+	sbiw R28,1
+	.dbline -1
+	.dbline 544
+; }
+; //***************************************************************************************
+; //测试不同状态下某些寄存器的值，调试用
+; void ChkRfState()
+; {
+L70:
+	.dbline 548
+; 	volatile BYTE i;
+; 
+; CHKNEXT:
+;    switch (RfRunNo)
+	lds R20,_RfRunNo
+	clr R21
+	cpi R20,1
+	ldi R30,0
+	cpc R21,R30
+	breq L74
+	cpi R20,2
+	ldi R30,0
+	cpc R21,R30
+	breq L75
+	cpi R20,3
+	ldi R30,0
+	cpc R21,R30
+	breq L76
+	cpi R20,4
+	ldi R30,0
+	cpc R21,R30
+	breq L77
+	xjmp L71
+X0:
+	.dbline 549
+;    {
+L74:
+	.dbline 551
+;      case 1:
+; 	 	  i=CC_GetStatus();
+	xcall _CC_GetStatus
+	std y+0,R16
+	.dbline 553
+; 		  //i=CC_RdReg(CCxxx0_MCSM1);
+; 		  RfRunNo=0;
+	clr R2
+	sts _RfRunNo,R2
+	.dbline 554
+; 		  break;
+	xjmp L72
+L75:
+	.dbline 556
+; 	 case 2:
+; 	 	  i=CC_RdStatus(CCxxx0_RXBYTES) & 0x7f;	  
+	ldi R16,59
+	xcall _CC_RdStatus
+	mov R24,R16
+	andi R24,127
+	std y+0,R24
+	.dbline 557
+; 		  i= CC_RdReg(CCxxx0_RXFIFO);
+	ldi R16,63
+	xcall _CC_RdReg
+	std y+0,R16
+	.dbline 558
+; 		  break;
+	xjmp L72
+L76:
+	.dbline 560
+; 	 case 3:
+; 	 	  i=CC_RdStatus(CCxxx0_TXBYTES) & 0x7f;	  
+	ldi R16,58
+	xcall _CC_RdStatus
+	mov R24,R16
+	andi R24,127
+	std y+0,R24
+	.dbline 561
+; 		  CC_ClrTx();
+	xcall _CC_ClrTx
+	.dbline 562
+; 		  i=CC_RdStatus(CCxxx0_TXBYTES) & 0x7f;
+	ldi R16,58
+	xcall _CC_RdStatus
+	mov R24,R16
+	andi R24,127
+	std y+0,R24
+	.dbline 563
+; 		  CC_RxOn();
+	ldi R16,52
+	xcall _CC_Cmd
+	.dbline 564
+; 		  RfRunNo=0;	  
+	clr R2
+	sts _RfRunNo,R2
+	.dbline 565
+; 		  break;
+	xjmp L72
+L77:
+	.dbline 567
+; 	 case 4:
+; 	 	  i=CC_RdStatus(CCxxx0_RXBYTES) & 0x7f;	  
+	ldi R16,59
+	xcall _CC_RdStatus
+	mov R24,R16
+	andi R24,127
+	std y+0,R24
+	.dbline 568
+; 		  CC_ClrRx();
+	xcall _CC_ClrRx
+	.dbline 569
+; 		  i=CC_RdStatus(CCxxx0_RXBYTES) & 0x7f;
+	ldi R16,59
+	xcall _CC_RdStatus
+	mov R24,R16
+	andi R24,127
+	std y+0,R24
+	.dbline 570
+; 		  CC_RxOn();	  
+	ldi R16,52
+	xcall _CC_Cmd
+	.dbline 571
+; 		  RfRunNo=0;
+	clr R2
+	sts _RfRunNo,R2
+	.dbline 572
+; 		  break;	  	  
+	xjmp L72
+L71:
+	.dbline 574
+; 	 default:
+; 	 	  RfRunNo=0;	 
+	clr R2
+	sts _RfRunNo,R2
+	.dbline 575
+; 	 	  break;	 	  
+L72:
+	.dbline 577
+	clr R2
+	lds R3,_RfRunNo
+	cp R2,R3
+	brsh L78
+	.dbline 577
+	xjmp L70
+L78:
+	.dbline -2
+L69:
+	adiw R28,1
+	xcall pop_gset1
+	.dbline 0 ; func end
+	ret
+	.dbsym l i 0 c
+	.dbend
+	.dbfunc e CC_SyncNew _CC_SyncNew fV
+	.even
+_CC_SyncNew::
+	.dbline -1
+	.dbline 582
+;    }
+;    if (RfRunNo>0) goto CHKNEXT;
+; }
+; //******************************************************************************
+; //修改同步码
+; void CC_SyncNew()
+; { 
+	.dbline 584
+;  // CLI();
+;   CC_WrReg(CCxxx0_SYNC1,Sync0 );//
+	lds R18,_Sync0
+	ldi R16,4
+	xcall _CC_WrReg
+	.dbline 585
+;   CC_WrReg(CCxxx0_SYNC0,Sync1 );
+	lds R18,_Sync1
+	ldi R16,5
+	xcall _CC_WrReg
+	.dbline -2
+L80:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e RfOff _RfOff fV
+	.even
+_RfOff::
+	.dbline -1
+	.dbline 591
+;  // SEI();
+; }
+; 
+; //==============================================================================
+; void RfOff()
+; {
+	.dbline 592
+;   CC_Cmd(0x36);//IDLE 必须先IDLE才能进入SLEEP
+	ldi R16,54
+	xcall _CC_Cmd
+	.dbline 593
+;   CC_Cmd(0x39);//Rf PwrDown
+	ldi R16,57
+	xcall _CC_Cmd
+	.dbline 595
+;   
+;   CLR(GICR,INT0);//!!关闭int0
+	in R24,0x3b
+	andi R24,191
+	out 0x3b,R24
+	.dbline 596
+;   PORTD &= 0xfb;  //!!休眠时候RFGDO0脚输出低电平，INT0脚不要设置上拉，否则耗电100uA
+	in R24,0x12
+	andi R24,251
+	out 0x12,R24
+	.dbline -2
+L81:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.area bss(ram, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\CCxx00.C
+_Sync1::
+	.blkb 2
+	.dbsym e Sync1 _Sync1 I
+_Sync0::
+	.blkb 2
+	.dbsym e Sync0 _Sync0 I
+_RfT::
+	.blkb 2
+	.dbsym e RfT _RfT i
+_RfRunNo::
+	.blkb 1
+	.dbsym e RfRunNo _RfRunNo c
+_bRfChk::
+	.blkb 1
+	.dbsym e bRfChk _bRfChk c
+_RfChkT::
+	.blkb 1
+	.dbsym e RfChkT _RfChkT c
+_Rssi::
+	.blkb 1
+	.dbsym e Rssi _Rssi c
+_bCrcOk::
+	.blkb 1
+	.dbsym e bCrcOk _bCrcOk c
+_Lqi::
+	.blkb 1
+	.dbsym e Lqi _Lqi c
+_IconTX::
+	.blkb 1
+	.dbsym e IconTX _IconTX c
+_IconRX::
+	.blkb 1
+	.dbsym e IconRX _IconRX c
+_bSendOk::
+	.blkb 1
+	.dbsym e bSendOk _bSendOk c
+_bRcvOk::
+	.blkb 1
+	.dbsym e bRcvOk _bRcvOk c

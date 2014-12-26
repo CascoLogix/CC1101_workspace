@@ -1,0 +1,19 @@
+#include <msp430.h> 
+
+
+typedef functionPointer_t void (*pFunction) (void);
+
+typedef blah_t int;
+
+
+blah_t x;
+
+/*
+ * main.c
+ */
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
+	
+	return 0;
+}

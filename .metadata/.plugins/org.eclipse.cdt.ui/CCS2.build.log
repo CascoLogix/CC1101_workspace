@@ -1,0 +1,17 @@
+
+**** Build of configuration LaunchPad_CC110L_FCC for project CCS2 ****
+
+"c:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: C:/CC1101_workspace/src/Application/RadioOperation.c'
+'Invoking: MSP430 Compiler'
+"c:/ti/ccsv6/tools/compiler/MSP430_4.2.2/bin/cl430" -vmsp --abi=coffabi -O4 --opt_for_speed=0 --include_path="c:/ti/ccsv6/ccs_base/msp430/include" --include_path="c:/ti/ccsv6/tools/compiler/MSP430_4.2.2/include" --include_path="C:/CC1101_workspace/src/Library" --include_path="C:/CC1101_workspace/src/Framework" -g --define=__MSP430G2553__ --define=__BSP_LAUNCHPAD_AIRBOOSTERPACKLITE --define=__RADIO_A110LR09 --define=__RADIO_CERTIFICATION_FCC --diag_warning=225 --display_error_number --printf_support=minimal --preproc_with_compile --preproc_dependency="Application/RadioOperation.pp" --obj_directory="Application"  "C:/CC1101_workspace/src/Application/RadioOperation.c"
+'Finished building: C:/CC1101_workspace/src/Application/RadioOperation.c'
+' '
+'Building target: CCS2.out'
+'Invoking: MSP430 Linker'
+"c:/ti/ccsv6/tools/compiler/MSP430_4.2.2/bin/cl430" -vmsp --abi=coffabi -O4 --opt_for_speed=0 -g --define=__MSP430G2553__ --define=__BSP_LAUNCHPAD_AIRBOOSTERPACKLITE --define=__RADIO_A110LR09 --define=__RADIO_CERTIFICATION_FCC --diag_warning=225 --display_error_number --printf_support=minimal -z -m"CCS2.map" --heap_size=80 --stack_size=190 -i"c:/ti/ccsv6/ccs_base/msp430/include" -i"c:/ti/ccsv6/tools/compiler/MSP430_4.2.2/lib" -i"c:/ti/ccsv6/tools/compiler/MSP430_4.2.2/include" --reread_libs --warn_sections --xml_link_info="CCS2_linkInfo.xml" --rom_model -o "CCS2.out"  "./Application/main.obj" "./Application/RadioOperation.obj" "./Application/Protocol.obj" "./Application/CommandInterface.obj" "./Application/Callback.obj" "./Application/Application.obj" "./Framework/BSP/Boards/EZ430/EZ430.obj" "./Framework/BSP/Boards/LaunchPad/AIRBoosterPackLite/AIRBoosterPackLite.obj" "./Framework/BSP/Boards/LaunchPad/LaunchPad.obj" "./Framework/Drivers/PushButton/PushButton.obj" "./Framework/Drivers/Radio/CCXXX/Interface/CC1101Interface.obj" "./Framework/Drivers/Radio/Radio.obj" "./Framework/Drivers/Timer/SoftwareTimer.obj" "./Framework/HAL/Common/DataManagement/CircularBuffer/CircularBuffer.obj" "./Framework/HAL/Common/EventHandling/EventHandling.obj" "./Framework/HAL/Common/RandomNumberGenerator/RandomNumberGenerator.obj" "./Framework/HAL/MSP430/Peripherals/Architecture/Architecture.obj" "./Framework/HAL/MSP430/Peripherals/Architecture/FlashModule/FlashModule.obj" "./Framework/HAL/MSP430/Peripherals/Communication/Communication.obj" "./Framework/HAL/MSP430/Peripherals/Communication/USCI/USCI.obj" "./Framework/HAL/MSP430/Peripherals/DataConverter/ADC10/ADC10.obj" "./Framework/HAL/MSP430/Peripherals/DataConverter/DataConverter.obj" "./Framework/HAL/MSP430/Peripherals/GPIO/DigitalIO/DigitalIO.obj" "./Framework/HAL/MSP430/Peripherals/GPIO/GPIO.obj" "./Framework/HAL/MSP430/Peripherals/Timer/Timer.obj" "./Framework/HAL/MSP430/Peripherals/Timer/TimerA/TimerA.obj" "./Framework/HAL/MSP430/Peripherals/Timer/TimerB/TimerB.obj" "./Framework/HAL/MSP430/Peripherals/Timer/WatchdogTimerPlus/WatchdogTimerPlus.obj" "../lnk_msp430g2553.cmd" "C:/CC1101_workspace/src/Library/CCS/AIRRadioSettingETSI.lib" "C:/CC1101_workspace/src/Library/CCS/AIRRadioSettingFCC.lib" -l"libc.a" 
+<Linking>
+'Finished building target: CCS2.out'
+' '
+
+**** Build Finished ****

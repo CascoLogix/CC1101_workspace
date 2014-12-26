@@ -1,0 +1,22 @@
+#include <msp430.h> 
+
+
+typedef void (*pFunction) (void);
+
+typedef int blah_t;
+
+typedef struct {
+	int x;
+} struct_t;
+
+blah_t x;
+
+/*
+ * main.c
+ */
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
+	
+	return 0;
+}

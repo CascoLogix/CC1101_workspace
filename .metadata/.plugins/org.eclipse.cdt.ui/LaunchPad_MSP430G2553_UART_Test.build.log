@@ -1,0 +1,22 @@
+
+**** Build of configuration Debug for project LaunchPad_MSP430G2553_UART_Test ****
+
+"c:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+making ../src/grace/grace.lib ...
+gmake[1]: Entering directory `C:/CC1101_workspace/LaunchPad_MSP430G2553_UART_Test/src/grace'
+gmake[1]: Nothing to be done for `all'.
+gmake[1]: Leaving directory `C:/CC1101_workspace/LaunchPad_MSP430G2553_UART_Test/src/grace'
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/bin/cl430" -vmsp --abi=eabi --include_path="c:/ti/ccsv6/ccs_base/msp430/include" --include_path="c:/ti/ccsv6/tools/compiler/msp430_4.3.5/include" --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp" --cmd_file="./configPkg/compiler.opt"  "../main.c"
+"../main.c", line 33: remark #1527-D: (ULP 2.1) Detected SW delay loop using __no_operation. Recommend using a timer module instead
+'Finished building: ../main.c'
+' '
+'Building target: LaunchPad_MSP430G2553_UART_Test.out'
+'Invoking: MSP430 Linker'
+"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/bin/cl430" -vmsp --abi=eabi --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"LaunchPad_MSP430G2553_UART_Test.map" --heap_size=80 --stack_size=80 -i"c:/ti/ccsv6/ccs_base/msp430/include" -i"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/lib" -i"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="LaunchPad_MSP430G2553_UART_Test_linkInfo.xml" --rom_model -o "LaunchPad_MSP430G2553_UART_Test.out" -l"./configPkg/linker.cmd"  "./main.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
+<Linking>
+'Finished building target: LaunchPad_MSP430G2553_UART_Test.out'
+' '
+
+**** Build Finished ****

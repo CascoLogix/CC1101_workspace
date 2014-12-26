@@ -1,0 +1,848 @@
+/*****************************************************************************/
+//	USCI.c
+//  
+//	 Created on:
+//	     Author:
+//
+/*****************************************************************************/
+
+
+// TODO:
+// - Remove all other modules other than USCI
+// - Make a separate code module for each USCI module (i.e. USCI, USCI_Ax,
+//     USCI_Bx
+
+
+/*****************************************************************************/
+//	Includes
+/*****************************************************************************/
+#include <USCI.h>
+#include <GPIO.h>
+#include <main.h>
+/*****************************************************************************/
+//	End Includes
+
+
+/*****************************************************************************/
+//	Defines
+/*****************************************************************************/
+// Put the #define below in the config.h file if you want to base the register
+// aliases off of TI's register names in the device-specific include file
+//#define __USE_TI_DEVICE_INCLUDE_REGISTER_NAMES__
+
+// Must include one of the following in config.h to enable use of its
+// corresponding library
+/*
+#define __USING_USCI_A0_UART_MODE__
+#define __USING_USCI_A0_IRDA_MODE__
+#define __USING_USCI_A0_LIN_MODE__
+#define __USING_USCI_A0_SPI_MODE__
+#define __USING_USCI_B0_SPI_MODE__
+#define __USING_USCI_B0_I2C_MODE__
+*/
+
+/*****************************************************************************/
+/*                                                                           */
+/*	Base address and bit definitions needed by USCI peripherals				 */
+/*                                                                           */
+/*****************************************************************************/
+#if defined (__MSP430_HAS_USCI__)
+#if defined (__MSP430G2553)
+#define USCI_INTERRUPT_CONTROL_BASE_ADDRESS								0x00
+#define USCI_A0_PERIPHERAL_CONTROL_BASE_ADDRESS							0x5D
+#define USCI_B0_PERIPHERAL_CONTROL_BASE_ADDRESS							0x68
+#define USCI_A0_PORT_BASE_ADDRESS										0x20
+#define USCI_B0_PORT_BASE_ADDRESS										0x20
+
+// USCI_A0 as UART
+#define USCI_A0_UART_TX_PIN												0x04
+#define USCI_A0_UART_RX_PIN												0x02
+
+// USCI_A0 as SPI
+#define USCI_A0_SPI_MOSI_PIN											0x04
+#define USCI_A0_SPI_MISO_PIN											0x02
+#define USCI_A0_SPI_CLK_PIN												0x10
+#define USCI_A0_SPI_STE_PIN												0x20
+
+// USCI_B0 as SPI
+#define USCI_B0_SPI_MOSI_PIN											0x80
+#define USCI_B0_SPI_MISO_PIN											0x40
+#define USCI_B0_SPI_CLK_PIN												0x20
+#define USCI_B0_SPI_STE_PIN												0x10
+
+// USCI_B0 as I2C
+#define USCI_B0_I2C_SCL_PIN												0x40
+#define USCI_B0_I2C_SDA_PIN												0x80
+
+#elif defined (__MSP430F2112)
+#define USCI_INTERRUPT_CONTROL_BASE_ADDRESS								0x01
+#define USCI_A0_PERIPHERAL_CONTROL_BASE_ADDRESS							0x5D
+#define USCI_B0_PERIPHERAL_CONTROL_BASE_ADDRESS							0x68
+#define USCI_PORT_BASE_ADDRESS											0x20
+
+
+#define USCI_TX_PIN														0x04
+#define USCI_RX_PIN														0x02
+
+#define USCI_RX_IE_BIT													0x01
+#define USCI_TX_IE_BIT													0x02
+#define USCI_BUSY_FLAG													0x01
+#define USCI_RX_INTERRUPT_FLAG											0x01
+#define USCI_TX_INTERRUPT_FLAG											0x02
+
+#elif defined (__MSP430F2618__)
+#define USCI_A0_INTERRUPT_CONTROL_BASE_ADDRESS							0x00
+#define USCI_B0_INTERRUPT_CONTROL_BASE_ADDRESS							0x00
+#define USCI_A1_INTERRUPT_CONTROL_BASE_ADDRESS							0x00
+#define USCI_B1_INTERRUPT_CONTROL_BASE_ADDRESS							0x00
+#define USCI_A0_PERIPHERAL_CONTROL_BASE_ADDRESS							0x5D
+#define USCI_B0_PERIPHERAL_CONTROL_BASE_ADDRESS							0x68
+#define USCI_A1_PERIPHERAL_CONTROL_BASE_ADDRESS							0xCD
+#define USCI_B1_PERIPHERAL_CONTROL_BASE_ADDRESS							0xD8
+#define USCI_A0_PORT_CONTROL_BASE_ADDRESS								0x18 // PORT3_CONTROL_BASE_ADDRESS
+#define USCI_B0_PORT_CONTROL_BASE_ADDRESS								0x30 // PORT3_CONTROL_BASE_ADDRESS
+#define USCI_A1_PORT_CONTROL_BASE_ADDRESS								0x18 // PORT3_CONTROL_BASE_ADDRESS
+#define USCI_B1_PORT_CONTROL_BASE_ADDRESS								0x30 // PORT3_CONTROL_BASE_ADDRESS
+
+
+#define USCI_A0_TX_PIN													0x10 // P3.4
+#define USCI_A0_RX_PIN													0x20 // P3.5
+#define USCI_A0_CLK_PIN													0x01 // P3.0
+#define USCI_A0_SOMI_PIN												0x20 // P3.5
+#define USCI_A0_SIMO_PIN												0x10 // P3.4
+#define USCI_A0_STE_PIN													0x08 // P3.3
+
+#define USCI_B0_SCL_PIN													0x04 // P3.2
+#define USCI_B0_SDA_PIN													0x02 // P3.1
+#define USCI_B0_CLK_PIN													0x08 // P3.3
+#define USCI_B0_SOMI_PIN												0x04 // P3.2
+#define USCI_B0_SIMO_PIN												0x02 // P3.1
+#define USCI_B0_STE_PIN													0x01 // P3.0
+
+#define USCI_A1_TX_PIN													0x40 // P3.6
+#define USCI_A1_RX_PIN													0x80 // P3.7
+#define USCI_A1_CLK_PIN													0x01 // P5.0
+#define USCI_A1_SOMI_PIN												0x80 // P3.7
+#define USCI_A1_SIMO_PIN												0x40 // P3.6
+#define USCI_A1_STE_PIN													0x08 // P5.3
+
+#define USCI_B1_SCL_PIN													0x04 // P5.2
+#define USCI_B1_SDA_PIN													0x02 // P5.1
+#define USCI_B1_CLK_PIN													0x08 // P5.3
+#define USCI_B1_SOMI_PIN												0x04 // P5.2
+#define USCI_B1_SIMO_PIN												0x02 // P5.1
+#define USCI_B1_STE_PIN													0x01 // P5.0
+
+#define USCI_A0_RX_IE_BIT												0x01
+#define USCI_A0_TX_IE_BIT												0x02
+#define USCI_A0_BUSY_FLAG												0x01
+#define USCI_A0_RX_INTERRUPT_FLAG										0x01
+#define USCI_A0_TX_INTERRUPT_FLAG										0x02
+
+#define USCI_B0_RX_IE_BIT												0x01
+#define USCI_B0_TX_IE_BIT												0x02
+#define USCI_B0_BUSY_FLAG												0x01
+#define USCI_B0_RX_INTERRUPT_FLAG										0x01
+#define USCI_B0_TX_INTERRUPT_FLAG										0x02
+
+#define USCI_A1_RX_IE_BIT												0x01
+#define USCI_A1_TX_IE_BIT												0x02
+#define USCI_A1_BUSY_FLAG												0x01
+#define USCI_A1_RX_INTERRUPT_FLAG										0x01
+#define USCI_A1_TX_INTERRUPT_FLAG										0x02
+
+#define USCI_B1_RX_IE_BIT												0x01
+#define USCI_B1_TX_IE_BIT												0x02
+#define USCI_B1_BUSY_FLAG												0x01
+#define USCI_B1_RX_INTERRUPT_FLAG										0x01
+#define USCI_B1_TX_INTERRUPT_FLAG										0x02
+#endif /* Device selection */
+#endif /*	(__MSP430_HAS_USCI__) */
+/*****************************************************************************/
+/*                                                                           */
+/*	END: Base address and bit definitions needed by USCI peripherals		 */
+/*                                                                           */
+/*****************************************************************************/
+
+
+/*****************************************************************************/
+/*                                                                           */
+/*	USCI																	 */
+/*                                                                           */
+/*****************************************************************************/
+#if (defined (__MSP430_HAS_USCI__) && !defined (__MSP430_HAS_USCI_AB0__)) || \
+	(defined (__MSP430_HAS_USCI__) && !defined (__MSP430_HAS_USCI_AB1__)) || \
+	(defined (__MSP430_HAS_USCI__) && !defined (__MSP430_HAS_USCI_A0__)) || \
+	(defined (__MSP430_HAS_USCI__) && !defined (__MSP430_HAS_USCI_A1__)) || \
+	(defined (__MSP430_HAS_USCI__) && !defined (__MSP430_HAS_USCI_B0__)) || \
+	(defined (__MSP430_HAS_USCI__) && !defined (__MSP430_HAS_USCI_B1__))
+// USCI interrupt control register addresses offsets
+#define USCI_INTERRUPT_ENABLE_REGISTER_ADDRESS_OFFSET					0x00
+#define USCI_INTERRUPT_FLAG_REGISTER_ADDRESS_OFFSET						0x02
+
+// USCI interrupt control register address resolution macros
+#define USCI_INTERRUPT_ENABLE_REGISTER_ADDRESS								\
+	USCI_INTERRUPT_CONTROL_BASE_ADDRESS + 									\
+	USCI_INTERRUPT_ENABLE_REGISTER_ADDRESS_OFFSET
+#define USCI_INTERRUPT_FLAG_REGISTER_ADDRESS								\
+	USCI_INTERRUPT_CONTROL_BASE_ADDRESS + 									\
+	USCI_INTERRUPT_FLAG_REGISTER_ADDRESS_OFFSET
+
+// USCI interrupt control register access macros
+#define USCI_INTERRUPT_ENABLE_REGISTER										\
+	*((uint8_t*)USCI_INTERRUPT_ENABLE_REGISTER_ADDRESS)
+#define USCI_INTERRUPT_FLAG_REGISTER										\
+	*((uint8_t*)USCI_INTERRUPT_FLAG_REGISTER_ADDRESS)
+
+
+// USCI peripheral control register address offsets
+#define USCI_AUTO_BAUD_CONTROL_REGISTER_ADDRESS_OFFSET					0x00
+#define USCI_IRDA_TX_CONTROL_REGISTER_ADDRESS_OFFSET					0x01
+#define USCI_IRDA_RX_CONTROL_REGISTER_ADDRESS_OFFSET					0x02
+#define USCI_CONTROL_REGISTER_0_ADDRESS_OFFSET							0x03
+#define USCI_CONTROL_REGISTER_1_ADDRESS_OFFSET							0x04
+#define USCI_BAUD_RATE_CONTROL_REGISTER_0_ADDRESS_OFFSET				0x05
+#define USCI_BAUD_RATE_CONTROL_REGISTER_1_ADDRESS_OFFSET				0x06
+#define USCI_MODULATION_CONTROL_REGISTER_ADDRESS_OFFSET					0x07
+#define USCI_STATUS_REGISTER_ADDRESS_OFFSET								0x08
+#define USCI_RX_BUF_ADDRESS_OFFSET										0x09
+#define USCI_TX_BUF_ADDRESS_OFFSET										0x0A
+
+// USCI peripheral control register address resolution macros
+#define USCI_AUTO_BAUD_CONTROL_REGISTER_ADDRESS								\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS +								\
+		USCI_AUTO_BAUD_CONTROL_REGISTER_ADDRESS_OFFSET
+#define USCI_IRDA_TX_CONTROL_REGISTER_ADDRESS								\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_IRDA_TX_CONTROL_REGISTER_ADDRESS_OFFSET
+#define USCI_IRDA_RX_CONTROL_REGISTER_ADDRESS								\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_IRDA_RX_CONTROL_REGISTER_ADDRESS_OFFSET
+#define USCI_CONTROL_REGISTER_0_ADDRESS										\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_CONTROL_REGISTER_0_ADDRESS_OFFSET
+#define USCI_CONTROL_REGISTER_1_ADDRESS										\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_CONTROL_REGISTER_1_ADDRESS_OFFSET
+#define USCI_BAUD_RATE_CONTROL_REGISTER_0_ADDRESS							\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_BAUD_RATE_CONTROL_REGISTER_0_ADDRESS_OFFSET
+#define USCI_BAUD_RATE_CONTROL_REGISTER_1_ADDRESS							\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_BAUD_RATE_CONTROL_REGISTER_1_ADDRESS_OFFSET
+#define USCI_MODULATION_CONTROL_REGISTER_ADDRESS							\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_MODULATION_CONTROL_REGISTER_ADDRESS_OFFSET
+#define USCI_STATUS_REGISTER_ADDRESS										\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_STATUS_REGISTER_ADDRESS_OFFSET
+#define USCI_RX_BUF_ADDRESS													\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_RX_BUF_ADDRESS_OFFSET
+#define USCI_TX_BUF_ADDRESS													\
+		USCI_PERIPHERAL_CONTROL_BASE_ADDRESS + 								\
+		USCI_TX_BUF_ADDRESS_OFFSET
+
+#if !defined(__USE_TI_DEVICE_INCLUDE_REGISTER_NAMES__)
+// USCI peripheral control register access macros
+#define USCI_AUTO_BAUD_CONTROL_REGISTER										\
+	*((uint8_t*)USCI_AUTO_BAUD_CONTROL_REGISTER_ADDRESS)
+#define USCI_IRDA_TX_CONTROL_REGISTER										\
+	*((uint8_t*)USCI_IRDA_TX_CONTROL_REGISTER_ADDRESS)
+#define USCI_IRDA_RX_CONTROL_REGISTER										\
+	*((uint8_t*)USCI_IRDA_RX_CONTROL_REGISTER_ADDRESS)
+#define USCI_CONTROL_REGISTER_0												\
+	*((uint8_t*)USCI_CONTROL_REGISTER_0_ADDRESS)
+#define USCI_CONTROL_REGISTER_1												\
+	*((uint8_t*)USCI_CONTROL_REGISTER_1_ADDRESS)
+#define USCI_BAUD_RATE_CONTROL_REGISTER_0									\
+	*((uint8_t*)USCI_BAUD_RATE_CONTROL_REGISTER_0_ADDRESS)
+#define USCI_BAUD_RATE_CONTROL_REGISTER_1									\
+	*((uint8_t*)USCI_BAUD_RATE_CONTROL_REGISTER_1_ADDRESS)
+#define USCI_MODULATION_CONTROL_REGISTER									\
+	*((uint8_t*)USCI_MODULATION_CONTROL_REGISTER_ADDRESS)
+#define USCI_STATUS_REGISTER												\
+	*((uint8_t*)USCI_STATUS_REGISTER_ADDRESS)
+#define USCI_RX_BUF															\
+	*((uint8_t*)USCI_RX_BUF_ADDRESS)
+#define USCI_TX_BUF															\
+	*((uint8_t*)USCI_TX_BUF_ADDRESS)
+#endif /* __USE_TI_DEVICE_INCLUDE_REGISTER_NAMES__ */
+
+// USCI port control register address offsets
+#define USCI_PORT_INPUT_REGISTER_ADDRESS_OFFSET							0x00
+#define USCI_PORT_OUTPUT_REGISTER_ADDRESS_OFFSET						0x01
+#define USCI_PORT_DIRECTION_REGISTER_ADDRESS_OFFSET						0x02
+#define USCI_PORT_INTERRUPT_FLAG_REGISTER_ADDRESS_OFFSET				0x03
+#define USCI_PORT_INTERRUPT_EDGE_SELECT_REGISTER_ADDRESS_OFFSET			0x04
+#define USCI_PORT_INTERRUPT_ENABLE_REGISTER_ADDRESS_OFFSET				0x05
+#define USCI_PORT_SELECT_REGISTER_ADDRESS_OFFSET						0x06
+#define USCI_PORT_SELECT_REGISTER_2_ADDRESS_OFFSET						0x21
+#define USCI_PORT_RESISTOR_ENABLE_REGISTER_ADDRESS_OFFSET				0x07
+
+// USCI port control register address resolution macros
+#define USCI_PORT_INPUT_REGISTER_ADDRESS									\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_INPUT_REGISTER_ADDRESS_OFFSET
+#define USCI_PORT_OUTPUT_REGISTER_ADDRESS									\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_OUTPUT_REGISTER_ADDRESS_OFFSET
+#define USCI_PORT_DIRECTION_REGISTER_ADDRESS								\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_DIRECTION_REGISTER_ADDRESS_OFFSET
+#define USCI_PORT_INTERRUPT_FLAG_REGISTER_ADDRESS							\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_INTERRUPT_FLAG_REGISTER_ADDRESS_OFFSET
+#define USCI_PORT_INTERRUPT_EDGE_SELECT_REGISTER_ADDRESS					\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_INTERRUPT_EDGE_SELECT_REGISTER_ADDRESS_OFFSET
+#define USCI_PORT_INTERRUPT_ENABLE_REGISTER_ADDRESS							\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_INTERRUPT_ENABLE_REGISTER_ADDRESS_OFFSET
+#define USCI_PORT_SELECT_REGISTER_ADDRESS									\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_SELECT_REGISTER_ADDRESS_OFFSET
+#define USCI_PORT_SELECT_REGISTER_2_ADDRESS									\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_SELECT_REGISTER_2_ADDRESS_OFFSET
+#define USCI_PORT_RESISTOR_ENABLE_REGISTER_ADDRESS							\
+		USCI_PORT_BASE_ADDRESS +											\
+		USCI_PORT_RESISTOR_ENABLE_REGISTER_ADDRESS_OFFSET
+
+#if !defined(__USE_TI_DEVICE_INCLUDE_REGISTER_NAMES__)
+// USCI port control register access macros
+#define USCI_OUT_REGISTER													\
+		*((uint8_t*)USCI_PORT_OUTPUT_REGISTER_ADDRESS)
+#define USCI_DIR_REGISTER													\
+		*((uint8_t*)USCI_PORT_DIRECTION_REGISTER_ADDRESS)
+#define USCI_SEL_REGISTER													\
+		*((uint8_t*)USCI_PORT_SELECT_REGISTER_ADDRESS)
+#define USCI_SEL_REGISTER_2													\
+		*((uint8_t*)USCI_PORT_SELECT_REGISTER_2_ADDRESS)
+#endif /* __USE_TI_DEVICE_INCLUDE_REGISTER_NAMES__ */
+
+#if defined(__USE_TI_DEVICE_INCLUDE_REGISTER_NAMES__)
+// USCI peripheral control register name aliases (see device-specific include)
+#define USCI_CONTROL_REGISTER_0										UCA0CTL0
+#define USCI_CONTROL_REGISTER_1										UCA0CTL1
+#define USCI_BAUD_RATE_CONTROL_REGISTER_0							UCA0BR0
+#define USCI_BAUD_RATE_CONTROL_REGISTER_1							UCA0BR1
+#define USCI_MODULATION_CONTROL_REGISTER							UCA0MCTL
+#define USCI_STATUS_REGISTER										UCA0STAT
+#define USCI_RX_BUF													UCA0RXBUF
+#define USCI_TX_BUF													UCA0TXBUF
+#define USCI_AUTO_BAUD_CONTROL_REGISTER								UCA0ABCTL
+#define USCI_IRDA_TX_CONTROL_REGISTER								UCA0IRTCTL
+#define USCI_IRDA_RX_CONTROL_REGISTER								UCA0IRRCTL
+
+// USCI interrupt control register name aliases
+#define USCI_INTERRUPT_ENABLE_REGISTER								UC0IE
+#define USCI_INTERRUPT_FLAG_REGISTER								UC0IFG
+
+// USCI bit name aliases
+#define USCI_RX_IE_BIT												UCA0RXIE
+#define USCI_TX_IE_BIT												UCA0TXIE
+#define USCI_BUSY_FLAG												UCBUSY
+#define USCI_TX_INTERRUPT_FLAG										UCA0TXIFG
+#define USCI_RX_INTERRUPT_FLAG										UCA0RXIFG
+
+// USCI port register access name aliases
+#define USCI_OUT_REGISTER												P1OUT
+#define USCI_DIR_REGISTER												P1DIR
+#define USCI_SEL_REGISTER												P1SEL
+#define USCI_SEL_REGISTER_2												P1SEL2
+#endif /* __USE_TI_DEVICE_INCLUDE_REGISTER_NAMES__ */
+#endif /* __MSP430_HAS_USCI__ */
+/*****************************************************************************/
+/*                                                                           */
+/*	END: USCI																 */
+/*                                                                           */
+/*****************************************************************************/
+/*****************************************************************************/
+//	End Defines
+
+
+/*****************************************************************************/
+//	Constant Struct Overlay Declarations
+/*****************************************************************************/
+/*****************************************************************************/
+/*                                                                           */
+/*	USCI Struct Overlay Declaration 										 */
+/*                                                                           */
+/*****************************************************************************/
+#if defined (__MSP430_HAS_USCI__)
+// Peripheral Control
+#if defined (__USING_USCI_A0_UART_MODE__)
+// Declare pointer to struct overlay for the USCI_A0 peripheral
+USCI_UART_control_t volatile * const p_USCI_A0_UART_CONTROL =
+		(USCI_UART_control_t *) USCI_A0_PERIPHERAL_CONTROL_BASE_ADDRESS;
+#endif /* defined (__USING_USCI_A0_UART_MODE__) */
+
+#if defined (__USING_USCI_A0_IRDA_MODE__)
+#error "USCI_A0 IrDA mode not defined yet"
+#endif /* defined (__USING_USCI_A0_IRDA_MODE__) */
+
+#if defined (__USING_USCI_A0_LIN_MODE__)
+#error "USCI_A0 LIN mode not defined yet"
+#endif /* defined (__USING_USCI_A0_LIN_MODE__) */
+
+#if defined (__USING_USCI_A0_SPI_MODE__)
+// Declare pointer to struct overlay for the USCI_B0 peripheral
+USCI_SPI_control_t volatile * const p_USCI_A0_SPI_CONTROL =
+		(USCI_SPI_control_t *) USCI_A0_PERIPHERAL_CONTROL_BASE_ADDRESS;
+#endif /* defined (__USING_USCI_A0_SPI_MODE__) */
+
+#if defined (__USING_USCI_B0_SPI_MODE__)
+// Declare pointer to struct overlay for the USCI_B0 peripheral
+USCI_SPI_control_t volatile * const p_USCI_B0_SPI_CONTROL =
+		(USCI_SPI_control_t *) USCI_B0_PERIPHERAL_CONTROL_BASE_ADDRESS;
+#endif /* defined (__USING_USCI_B0_SPI_MODE__) */
+
+#if defined (__USING_USCI_B0_I2C_MODE__)
+// Declare pointer to struct overlay for the USCI_B0 peripheral
+USCI_I2C_control_t volatile * const p_USCI_B0_I2C_CONTROL =
+		(USCI_I2C_control_t *) USCI_B0_PERIPHERAL_CONTROL_BASE_ADDRESS;
+#endif /* defined (__USING_USCI_B0_I2C_MODE__) */
+
+// GPIO Control
+#if defined (__MSP430G2553__)
+#if defined (__USING_USCI_A0_UART_MODE__)
+port1_t volatile * const p_USCI_A0_UART_PORT =
+		(port1_t *) USCI_A0_PORT_BASE_ADDRESS;
+#define USCI_A0_UART_PORT		(*p_USCI_A0_UART_PORT)
+#endif /* defined (__USING_USCI_A0_UART_MODE__) */
+
+#if defined (__USING_USCI_A0_SPI_MODE__)
+port1_t volatile * const p_USCI_A0_SPI_PORT =
+		(port1_t *) USCI_A0_PORT_BASE_ADDRESS;
+#define USCI_A0_SPI_PORT		(*p_USCI_A0_SPI_PORT)
+#endif /* defined (__USING_USCI_A0_UART_MODE__) */
+
+#if defined (__USING_USCI_B0_SPI_MODE__)
+port1_t volatile * const p_USCI_B0_SPI_PORT =
+		(port1_t *) USCI_B0_PORT_BASE_ADDRESS;
+#define USCI_B0_SPI_PORT		(*p_USCI_B0_SPI_PORT)
+#endif /* defined (__USING_USCI_B0_SPI_MODE__) */
+
+#if defined (__USING_USCI_B0_I2C_MODE__)
+port1_t volatile * const p_USCI_B0_I2C_PORT =
+		(port1_t *) USCI_B0_PORT_BASE_ADDRESS;
+#define USCI_B0_I2C_PORT		(*p_USCI_B0_I2C_PORT)
+#endif /* defined (__USING_USCI_B0_I2C_MODE__) */
+#endif /* defined (__MSP430G2553__) */
+
+// Interrupt Control
+USCI_interrupt_t volatile * const p_USCI_INTERRUPT =
+		(USCI_interrupt_t *) USCI_INTERRUPT_CONTROL_BASE_ADDRESS;
+#endif /* defined (__MSP430_HAS_USCI__) */
+/*****************************************************************************/
+/*                                                                           */
+/*	END: USCI Struct Overlay Declaration									 */
+/*                                                                           */
+/*****************************************************************************/
+/*****************************************************************************/
+//	END: Struct Overlay Declarations for Peripheral Register Access
+
+
+/*****************************************************************************/
+//	Function Prototypes
+/*****************************************************************************/
+/*****************************************************************************/
+/*                                                                           */
+/*	USCI Function Prototypes												 */
+/*                                                                           */
+/*****************************************************************************/
+/*****************************************************************************/
+/*                                                                           */
+/*	END: USCI Function Prototypes											 */
+/*                                                                           */
+/*****************************************************************************/
+/*****************************************************************************/
+//	End Function Prototypes
+
+
+/*****************************************************************************/
+//	Function Definitions
+/*****************************************************************************/
+/*****************************************************************************/
+/*                                                                           */
+/*	USCI Function Definitions												 */
+/*                                                                           */
+/*****************************************************************************/
+#if defined (__MSP430_HAS_USCI__)
+#if defined (__USING_USCI_A0_UART_MODE__)
+void USCI_A0_init_UART (uint16_t baud_rate, uint8_t clk_source)
+{
+	USCI_A0_UART_PORT.select |= USCI_A0_UART_RX_PIN | USCI_A0_UART_TX_PIN;	// Select UART pins
+	#if defined (__MSP430G2553__)
+	P1SEL2 |= USCI_A0_UART_RX_PIN | USCI_A0_UART_TX_PIN;				// Select UART pins
+	#endif
+	USCI_A0_UART_CONTROL.control_1 |= UCSSEL_2;					// UCLK = SMCLK
+#if defined (_FCPU)
+	USCI_A0_UART_CONTROL.baud_rate_control_1 = (((_FCPU / baud_rate) & 0xFF00) >> 8);
+	USCI_A0_UART_CONTROL.baud_rate_control_0 = ((_FCPU / baud_rate) & 0xFF);
+#else
+	#error "_FCPU not defined"
+#endif
+	USCI_A0_UART_CONTROL.modulation_control = UCBRS1;	// Modulation
+	USCI_A0_UART_CONTROL.control_1 &= ~UCSWRST;					// Initialize USCI
+	//USCI_INTERRUPT.flag_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+	USCI_INTERRUPT.enable_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+}
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_A0_UART_enable_TX_interrupt (void)
+{
+	USCI_INTERRUPT.enable_2 |= USCI_TX_IE_BIT;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_A0_UART_disable_TX_interrupt (void)
+{
+	USCI_INTERRUPT.enable_2 &= ~USCI_TX_IE_BIT;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_A0_UART_enable_RX_interrupt (void)
+{
+	USCI_INTERRUPT.enable_2 |= USCI_RX_IE_BIT;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_A0_UART_disable_RX_interrupt (void)
+{
+	USCI_INTERRUPT.enable_2 &= ~USCI_RX_IE_BIT;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_A0_UART_clear_TX_interrupt_flag (void)
+{
+	USCI_INTERRUPT.flag_2 &= ~USCI_TX_INTERRUPT_FLAG;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_A0_UART_clear_RX_interrupt_flag (void)
+{
+	USCI_INTERRUPT.flag_2 &= ~USCI_RX_INTERRUPT_FLAG;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_A0_UART_write_TX_buffer (uint8_t data)
+{
+	USCI_A0_UART_CONTROL.transmit_buffer = data;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_A0_UART_read_RX_buffer (void)
+{
+	uint8_t data;
+
+	data = USCI_A0_UART_CONTROL.receive_buffer;
+	return data;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_A0_UART_read_busy_flag (void)
+{
+	uint8_t flag;
+
+	flag = USCI_A0_UART_CONTROL.status_register & USCI_BUSY_FLAG;
+	return flag;
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+#endif /* defined (__USING_USCI_A0_UART_MODE__) */
+
+
+#if defined (__USING_USCI_A0_SPI_MODE__)
+void USCI_A0_init_SPI (uint16_t clock_div, uint8_t clk_source)
+{
+	USCI_A0_SPI_PORT.select |= USCI_A0_SPI_MOSI_PIN | USCI_A0_SPI_MISO_PIN | USCI_A0_SPI_CLK_PIN;	// Select SPI pins
+	#if defined (__MSP430G2553__)
+	P1SEL2 |= USCI_A0_SPI_MOSI_PIN | USCI_A0_SPI_MISO_PIN | USCI_A0_SPI_CLK_PIN;				// Select SPI pins
+	#endif
+	USCI_A0_SPI_CONTROL.control_1 |= clk_source;
+	USCI_A0_UART_CONTROL.baud_rate_control_1 = ((clock_div & 0xFF00) >> 8);
+	USCI_A0_UART_CONTROL.baud_rate_control_0 = (clock_div & 0xFF);
+	USCI_A0_UART_CONTROL.modulation_control = UCBRS2 + UCBRS0;	// Modulation
+	USCI_A0_UART_CONTROL.control_1 &= ~UCSWRST;					// Initialize USCI
+	USCI_INTERRUPT.flag_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+	USCI_INTERRUPT.enable_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+}
+#endif /* defined (__USING_USCI_A0_SPI_MODE__) */
+
+
+#if defined (__USING_USCI_B0_SPI_MODE__)
+void USCI_B0_init_SPI (uint16_t clock_div, uint8_t clk_source)
+{
+	USCI_B0_SPI_PORT.select |= USCI_B0_SPI_MOSI_PIN | USCI_B0_SPI_MISO_PIN | USCI_B0_SPI_CLK_PIN;	// Select UART pins
+	#if defined (__MSP430G2553__)
+	P1SEL2 |= USCI_B0_SPI_MOSI_PIN | USCI_B0_SPI_MISO_PIN | USCI_B0_SPI_CLK_PIN;				// Select UART pins
+	#endif
+	USCI_B0_SPI_CONTROL.control_1 |= clk_source;					// UCLK = SMCLK
+	USCI_B0_SPI_CONTROL.bit_rate_control_1 = ((clock_div & 0xFF00) >> 8);
+	USCI_B0_SPI_CONTROL.bit_rate_control_0 = (clock_div & 0xFF);
+	//USCI_B0_SPI_CONTROL.modulation_control = UCBRS2 + UCBRS0;	// Modulation
+	USCI_B0_SPI_CONTROL.control_1 &= ~UCSWRST;					// Initialize USCI
+	USCI_INTERRUPT.flag_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+	USCI_INTERRUPT.enable_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+}
+#endif /* defined (__USING_USCI_B0_SPI_MODE__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_phase_change_then_latch (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_phase_latch_then_change (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_polarity_idle_low (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_polarity_idle_high (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_bit_order_MSB (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_bit_order_LSB (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_slave (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_master (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_mode (uint8_t mode)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_clock_src (uint8_t mode)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_get_busy_status (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_get_framing_error_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_get_overrun_error_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_read_RX_buffer (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_write_TX_buffer (uint8_t data)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_get_RX_int_en (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_RX_int_en (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_clr_RX_int_en (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_get_TX_int_en (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_TX_int_en (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_clr_TX_int_en (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_get_RX_int_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_RX_int_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_clr_RX_int_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+uint8_t USCI_B0_SPI_get_TX_int_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_set_TX_int_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if !defined (__USCI_ENABLE_MACROS__)
+void USCI_B0_SPI_clr_TX_int_flag (void)
+{
+
+}
+#endif /* defined (__USCI_ENABLE_MACROS__) */
+
+
+#if defined (__USING_USCI_B0_I2C_MODE__)
+void USCI_B0_init_I2C (uint16_t clock_div, uint8_t clk_source,
+						uint8_t bus_role, uint16_t address)
+{
+	USCI_B0_I2C_PORT.select |= USCI_B0_I2C_SCL_PIN | USCI_B0_I2C_SDA_PIN;	// Select UART pins
+	#if defined (__MSP430G2553__)
+	P1SEL2 |= USCI_B0_I2C_SCL_PIN | USCI_B0_I2C_SDA_PIN;				// Select UART pins
+	#endif
+	USCI_B0_I2C_CONTROL.control_1 |= UCSSEL_2;					// UCLK = SMCLK
+	USCI_B0_I2C_CONTROL.baud_rate_control_1 = ((clock_div & 0xFF00) >> 8);
+	USCI_B0_I2C_CONTROL.baud_rate_control_0 = (clock_div & 0xFF);
+	USCI_B0_I2C_CONTROL.control_1 &= ~UCSWRST;					// Initialize USCI
+	USCI_INTERRUPT.flag_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+	USCI_INTERRUPT.enable_2 &= ~(USCI_TX_IE_BIT | USCI_RX_IE_BIT);
+}
+#endif /* defined (__USING_USCI_B0_I2C_MODE__) */
+#endif /* __MSP430_HAS_USCI_xxx__ */
+/*****************************************************************************/
+/*                                                                           */
+/*	END: USCI Function Definitions											 */
+/*                                                                           */
+/*****************************************************************************/
+/*****************************************************************************/
+//	End Function Definitions

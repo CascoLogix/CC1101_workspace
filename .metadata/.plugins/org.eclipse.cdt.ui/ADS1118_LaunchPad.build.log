@@ -1,0 +1,18 @@
+
+**** Build of configuration Debug for project ADS1118_LaunchPad ****
+
+"c:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../main.cfg'
+'Invoking: XDCtools'
+"C:/ti/xdctools_3_24_05_48/xs" --xdcpath="c:/ti/grace_3_00_01_59/packages;c:/ti/ccsv6/ccs_base;C:/ti/msp430/MSP430ware_1_95_00_32/packages;" xdc.tools.configuro -o configPkg -t ti.targets.msp430.elf.MSP430 -p ti.platforms.msp430:MSP430G2553 -r debug -c "c:/ti/ccsv6/tools/compiler/msp430_4.3.5" --compileOptions "--symdebug:dwarf --optimize_with_debug" "../main.cfg"
+js: "C:/ti/xdctools_3_24_05_48/packages/xdc/tools/Cmdr.xs", line 51: Error: xdc.tools.configuro: InternalError: ti.platforms.msp430: can't resolve name xdc.platform.IPlatform.peripherals
+making ../src/grace/grace.lib ...
+are430 grace.lib objs/Grace_init.obj ...
+"C:/ti/ccsv5/tools/compiler/msp430_4.1.2/bin/ar430" rq grace.lib objs/Grace_init.obj objs/CSL_init.obj objs/GPIO_init.obj objs/BCSplus_init.obj objs/USCI_A0_init.obj objs/InterruptVectors_init.obj objs/USCI_B0_init.obj objs/System_init.obj objs/Timer1_A3_init.obj objs/Timer0_A3_init.obj objs/WDTplus_init.obj
+C:/Users/CLINTS~1/AppData/Local/Temp/make4140-1.sh: C:/ti/ccsv5/tools/compiler/msp430_4.1.2/bin/ar430: No such file or directory
+gmake[1]: *** [grace.lib] Error 127
+gmake[1]: Target `all' not remade because of errors.
+gmake: *** [../src/grace/grace.lib] Error 2
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

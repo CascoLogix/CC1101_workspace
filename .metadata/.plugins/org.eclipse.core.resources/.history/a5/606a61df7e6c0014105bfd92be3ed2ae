@@ -1,0 +1,25 @@
+
+
+#include <msp430.h>
+#include <gpio.h>
+#include <USCI_2.h>
+
+
+typedef void (*pFunction_t) (void);
+
+
+/*
+ * main.c
+ */
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
+	
+	return 0;
+}
+
+
+void UART_init (void)
+{
+
+}

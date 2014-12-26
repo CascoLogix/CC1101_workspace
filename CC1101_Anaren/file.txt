@@ -1,0 +1,90 @@
+#include <msp430.h> 
+
+/*
+ * main.cpp
+ */
+
+#include "CC1101.h"
+#include "Pinouts.h"
+#include "Registers.h"
+
+char txBuffer[4];
+char rxBuffer[4];
+unsigned char SW2FLAG = 0;
+unsigned char GDO0FLAG = 0;
+unsigned int i;
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
+    cc1101.Init();
+    cc1101.SetReceive();
+
+    //Configure ports -- switch inputs, LEDs, GDO0 to RX packet info from CC1101
+    SW_PxIES = SW2;//Int on falling edge
+    SW_PxIFG &= ~(SW2);//Clr flags
+    SW_PxIE = SW2;//Activate enables
+    SW_PxREN |= SW2;
+    SW_PxOUT |= SW2;
+    LED_PxOUT &= ~(LED1); //Outputs
+    LED_PxDIR = LED1; //Outputs
+    GDO0_PxIES |= GDO0_PIN;       // Int on falling edge (end of pkt)
+    GDO0_PxREN |= GDO0_PIN;
+    GDO0_PxOUT |= GDO0_PIN;
+    GDO0_PxIFG &= ~GDO0_PIN;      // Clear flag
+    GDO0_PxIE |= GDO0_PIN;        // Enable int on end of packet
+
+    unsigned char STATE = 1;
+
+    switch(STATE)
+    {
+    case 1:
+    	 __bis_SR_register(LPM3_bits + GIE);
+    	 if(SW2FLAG)
+    	 {
+    		 STATE = 2;
+    	 }
+    	 else if (GDO0FLAG)
+    	 {
+    		 STATE = 3;
+    	 }
+    case 2:
+    	char size = 4;
+    	txBuffer[0] = 3;
+    	txBuffer[1] = 2;
+    	txBuffer[2] = 1;
+    	txBuffer[3] = 0;
+    	cc1101.SendPacket(txBuffer, 4);
+    	cc1101.SetReceive();
+    	STATE = 1;
+    case 3:
+    	char len = 4;
+    	if(cc1101.ReceivePacket(rxBuffer, &len))
+    	{
+    		LED_PxOUT ^= LED1;
+    	}
+    	STATE = 0;
+    }
+
+
+}
+
+
+
+
+#pragma vector = PORT1_VECTOR
+__interrupt void PORT1ISR(void)
+{
+
+	if(SW_PxIFG & SW2)
+	{
+		SW2FLAG = 1;
+		SW_PxIFG &= ~SW2;
+	}
+	else if (GDO0_PxIFG & GDO0_PIN)      //SW2
+	{
+		GDO0FLAG = 1;
+		GDO0_PxIFG &= ~GDO0_PIN;
+	}
+	LPM3_EXIT;
+
+}

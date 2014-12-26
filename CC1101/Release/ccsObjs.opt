@@ -1,0 +1,1 @@
+"./main.obj" "./debug.obj" "./SPI.obj" "./CC1101.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 

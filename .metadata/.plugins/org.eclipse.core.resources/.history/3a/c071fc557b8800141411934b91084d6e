@@ -1,0 +1,63 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lnk_msp430g2553.cmd 
+
+C_SRCS += \
+../CC1101.c \
+../GPIO.c \
+../SPI.c \
+../Timer0_A3.c \
+../Timer1_A3.c \
+../debug.c \
+../main.c 
+
+OBJS += \
+./CC1101.obj \
+./GPIO.obj \
+./SPI.obj \
+./Timer0_A3.obj \
+./Timer1_A3.obj \
+./debug.obj \
+./main.obj 
+
+C_DEPS += \
+./CC1101.pp \
+./GPIO.pp \
+./SPI.pp \
+./Timer0_A3.pp \
+./Timer1_A3.pp \
+./debug.pp \
+./main.pp 
+
+C_DEPS__QUOTED += \
+"CC1101.pp" \
+"GPIO.pp" \
+"SPI.pp" \
+"Timer0_A3.pp" \
+"Timer1_A3.pp" \
+"debug.pp" \
+"main.pp" 
+
+OBJS__QUOTED += \
+"CC1101.obj" \
+"GPIO.obj" \
+"SPI.obj" \
+"Timer0_A3.obj" \
+"Timer1_A3.obj" \
+"debug.obj" \
+"main.obj" 
+
+C_SRCS__QUOTED += \
+"../CC1101.c" \
+"../GPIO.c" \
+"../SPI.c" \
+"../Timer0_A3.c" \
+"../Timer1_A3.c" \
+"../debug.c" \
+"../main.c" 
+
+

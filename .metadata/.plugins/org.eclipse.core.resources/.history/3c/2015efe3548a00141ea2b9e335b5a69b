@@ -1,0 +1,376 @@
+	.module main.c
+	.area lit(rom, con, rel)
+_FreqID::
+	.word 8
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\main.c
+	.dbsym e FreqID _FreqID kI
+	.area text(rom, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\main.c
+	.dbfunc e Delay_us _Delay_us fV
+;              t -> R16,R17
+	.even
+_Delay_us::
+	.dbline -1
+	.dbline 8
+; 
+; #include "config.h"
+; #include "comm.h"
+; #include "macros.h"
+; 
+; const FreqID=8 ;//定义工作频点为8频点 频点范围0--32
+; void Delay_us(int t)
+; {
+	xjmp L3
+L2:
+	.dbline 10
+	.dbline 11
+	nop
+	.dbline 12
+	nop
+	.dbline 13
+	nop
+	.dbline 14
+	nop
+	.dbline 15
+	nop
+	.dbline 16
+	nop
+	.dbline 17
+L3:
+	.dbline 9
+;   while(t--)
+	movw R2,R16
+	subi R16,1
+	sbci R17,0
+	tst R2
+	brne L2
+	tst R3
+	brne L2
+X0:
+	.dbline -2
+L1:
+	.dbline 0 ; func end
+	ret
+	.dbsym r t 16 I
+	.dbend
+	.dbfunc e Delay_ms _Delay_ms fV
+;              i -> R20,R21
+;              t -> R22,R23
+	.even
+_Delay_ms::
+	xcall push_gset2
+	movw R22,R16
+	.dbline -1
+	.dbline 20
+;   {
+;     NOP();
+; 	NOP();
+; 	NOP();
+; 	NOP();
+; 	NOP();
+; 	NOP();
+;   }
+; }
+; void Delay_ms(int t)
+; {
+	.dbline 22
+;   int i;
+;   for (i=0;i<t;i++)
+	clr R20
+	clr R21
+	xjmp L9
+L6:
+	.dbline 23
+	ldi R16,1000
+	ldi R17,3
+	xcall _Delay_us
+L7:
+	.dbline 22
+	subi R20,255  ; offset = 1
+	sbci R21,255
+L9:
+	.dbline 22
+	cp R20,R22
+	cpc R21,R23
+	brlt L6
+	.dbline -2
+L5:
+	xcall pop_gset2
+	.dbline 0 ; func end
+	ret
+	.dbsym r i 20 I
+	.dbsym r t 22 I
+	.dbend
+	.dbfunc e PortInit _PortInit fV
+	.even
+_PortInit::
+	.dbline -1
+	.dbline 29
+;   Delay_us(1000);
+; }
+; //====================================================================
+; //定义单片机脚，不能是空脚就不管SSD
+; //====================================================================
+; void PortInit(void)
+; {
+	.dbline 30
+; 	DDRA  = 0x7F;//01111111
+	ldi R24,127
+	out 0x1a,R24
+	.dbline 31
+; 	PORTA = 0x20;//00100000
+	ldi R24,32
+	out 0x1b,R24
+	.dbline 33
+; 
+; 	DDRB  = 0xB0;//10110000//Miso  改为输入 否则无线模块打不开，
+	ldi R24,176
+	out 0x17,R24
+	.dbline 34
+; 	PORTB = 0x1F;//00011111
+	ldi R24,31
+	out 0x18,R24
+	.dbline 36
+; 
+; 	DDRC  = 0xC3;//11000011
+	ldi R24,195
+	out 0x14,R24
+	.dbline 37
+; 	PORTC = 0x80;//10000000 
+	ldi R24,128
+	out 0x15,R24
+	.dbline 39
+; 
+; 	DDRD  = 0xFA;//11111010
+	ldi R24,250
+	out 0x11,R24
+	.dbline 40
+; 	PORTD = 0x43;//01000011
+	ldi R24,67
+	out 0x12,R24
+	.dbline -2
+L10:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e xieyi_panduan _xieyi_panduan fV
+	.even
+_xieyi_panduan::
+	.dbline -1
+	.dbline 44
+; 	
+; }
+; void xieyi_panduan (void)
+; {
+	.dbline 45
+;      SerData[10]++; //接收次数加1
+	lds R24,_SerData+10
+	subi R24,255    ; addi 1
+	sts _SerData+10,R24
+	.dbline 46
+; 	 SerData[12]=CC_RssiCh(Rssi);  //学生机灵敏度
+	lds R16,_Rssi
+	xcall _CC_RssiCh
+	sts _SerData+12,R16
+	.dbline 47
+; 	 RFData[12]=SerData[12];
+	mov R2,R16
+	sts _RFData+12,R2
+	.dbline 48
+; 	 CC_SendPacket(SerData+1,(SerData[0]+1));//发送数据包 ***//因为增加了学生机器RSSI	 
+	lds R18,_SerData
+	subi R18,255    ; addi 1
+	ldi R16,<_SerData+1
+	ldi R17,>_SerData+1
+	xcall _CC_SendPacket
+	.dbline -2
+L11:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.dbfunc e main _main fV
+	.even
+_main::
+	.dbline -1
+	.dbline 52
+; }
+; 
+; void main(void)
+; {  
+	.dbline 53
+; 	PortInit();
+	xcall _PortInit
+L18:
+	.dbline 54
+L19:
+	.dbline 54
+	xjmp L18
+X1:
+	.dbline -2
+L17:
+	.dbline 0 ; func end
+	ret
+	.dbend
+	.area vector(rom, abs)
+	.org 4
+	jmp _INT0_handler
+	.area text(rom, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\main.c
+	.dbfunc e INT0_handler _INT0_handler fV
+;              i -> R20,R21
+;             dd -> R20
+	.even
+_INT0_handler::
+	xcall push_lset
+	xcall push_gset1
+	sbiw R28,2
+	.dbline -1
+	.dbline 63
+; 	while(1);  
+; 		
+; }
+; //******************************************************************************
+; //无线接收中断
+; // 把接收到的数据放入RFData buffer中，并解析
+; // archived 
+; #pragma interrupt_handler	INT0_handler:2
+; void INT0_handler(void)
+; {
+	.dbline 65
+; 	BYTE dd;
+; 	int i=0;
+	clr R20
+	clr R21
+	.dbline 66
+; 	CLI();             
+	cli
+	.dbline 67
+; 	dd=CC_RdStatus(0x35);   //读状态寄存器
+	ldi R16,53
+	xcall _CC_RdStatus
+	mov R20,R16
+	.dbline 68
+; 	if (dd==17) CC_ClrRx(); //清除接收缓冲区和接收错误相关标志
+	cpi R16,17
+	brne L22
+	.dbline 68
+	xcall _CC_ClrRx
+L22:
+	.dbline 69
+; 	if (dd==22) CC_ClrTx(); //清除发送缓冲区和发送错误相关标志
+	cpi R20,22
+	brne L24
+	.dbline 69
+	xcall _CC_ClrTx
+L24:
+	.dbline 70
+; 	dd=CC_RdStatus(0x3B)&0x7f;//CCxxx0_RXBYTES 读数据长度
+	ldi R16,59
+	xcall _CC_RdStatus
+	mov R20,R16
+	andi R20,127
+	.dbline 71
+; 	if (dd==0)//V1.1 ?-ê?if (bSendOk==0) 长度 0
+	brne L26
+	.dbline 72
+; 	{ 
+	.dbline 73
+; 		CC_Chan(FreqID); // new added ??????????????????
+	ldi R30,<_FreqID
+	ldi R31,>_FreqID
+	lpm R16,Z
+	xcall _CC_Chan
+	.dbline 74
+; 		CC_RxOn();//	进入接收状态   
+	ldi R16,52
+	xcall _CC_Cmd
+	.dbline 75
+; 	}
+	xjmp L27
+L26:
+	.dbline 77
+; 	else  //长度不为0
+; 	{ 
+	.dbline 78
+; 		CC_RdPacket(); //读数据包
+	xcall _CC_RdPacket
+	.dbline 79
+; 		CC_Chan(FreqID); // new added ??????????????????
+	ldi R30,<_FreqID
+	ldi R31,>_FreqID
+	lpm R16,Z
+	xcall _CC_Chan
+	.dbline 80
+; 		CC_RxOn();
+	ldi R16,52
+	xcall _CC_Cmd
+	.dbline 81
+; 		if ((bRcvOk==1)&&(SerData[0]<62))
+	lds R24,_bRcvOk
+	cpi R24,1
+	brne L28
+	lds R24,_SerData
+	cpi R24,62
+	brsh L28
+	.dbline 82
+; 		{
+	.dbline 84
+; 			//复制数据,用于在主程序里显示和修改,SerData 用来在RF中断里判断
+; 			memcpy(RFData,SerData,SerData[0]);
+	mov R2,R24
+	clr R3
+	std y+1,R3
+	std y+0,R2
+	ldi R18,<_SerData
+	ldi R19,>_SerData
+	ldi R16,<_RFData
+	ldi R17,>_RFData
+	xcall _memcpy
+	.dbline 85
+; 			xieyi_panduan();//解析协议
+	xcall _xieyi_panduan
+	.dbline 86
+;             bRcvOk=0;
+	clr R2
+	sts _bRcvOk,R2
+	.dbline 87
+; 		}
+L28:
+	.dbline 88
+; 	}
+L27:
+	.dbline 89
+;     SEI(); //re-enable interrupts
+	sei
+	.dbline -2
+L21:
+	adiw R28,2
+	xcall pop_gset1
+	xcall pop_lset
+	.dbline 0 ; func end
+	reti
+	.dbsym r i 20 I
+	.dbsym r dd 20 c
+	.dbend
+	.area vector(rom, abs)
+	.org 12
+	jmp _INT2_handler
+	.area text(rom, con, rel)
+	.dbfile D:\liq\无线模块\CC1100\1101软件包\main.c
+	.dbfunc e INT2_handler _INT2_handler fV
+	.even
+_INT2_handler::
+	.dbline -1
+	.dbline 96
+; }
+; //****************************************************************
+; // 退出休眠模式，执行下一句语句
+; // archived 
+; #pragma interrupt_handler	INT2_handler:4
+; void INT2_handler(void)  //进入中断服务程序之后中断标志自动清零。
+; {
+	.dbline -2
+L30:
+	.dbline 0 ; func end
+	reti
+	.dbend

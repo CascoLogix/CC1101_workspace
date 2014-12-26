@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Clint C Source Template" key="LastUsedSourceTemplate"/>
+	<item value="Clint Config Header Template" key="LastUsedHeaderTemplate"/>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="402" key="size.width"/>
+		<item value="180" key="size.height"/>
+	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="CRenameRefactoringInputPage">
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+</section>

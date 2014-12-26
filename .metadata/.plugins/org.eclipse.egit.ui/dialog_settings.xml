@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="CommitDialog.showUntracked"/>
+	<list key="CommitDialog.authorValues">
+		<item value="Clint Stevenson &lt;clintastevenson@gmail.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="Clint Stevenson &lt;clintastevenson@gmail.com&gt;"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/CascoLogix/MSP430G2553_LaunchPad_One_Shot.git"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.dialogs.ResetTargetSelectionDialog.dialogBounds">
+		<item value="538" key="DIALOG_WIDTH"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="749" key="DIALOG_HEIGHT"/>
+		<item value="539" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.MergeTargetSelectionDialog.dialogBounds">
+		<item value="538" key="DIALOG_WIDTH"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="657" key="DIALOG_HEIGHT"/>
+		<item value="539" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+	</section>
+	<section name="org.eclipse.egit.ui.internal.dialogs.RebaseTargetSelectionDialog.dialogBounds">
+		<item value="538" key="DIALOG_WIDTH"/>
+		<item value="116" key="DIALOG_Y_ORIGIN"/>
+		<item value="483" key="DIALOG_HEIGHT"/>
+		<item value="539" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.fetch.FetchResultDialog.dialogBounds">
+		<item value="743" key="DIALOG_WIDTH"/>
+		<item value="134" key="DIALOG_Y_ORIGIN"/>
+		<item value="457" key="DIALOG_HEIGHT"/>
+		<item value="437" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.merge.MergeResultDialog.dialogBounds">
+		<item value="649" key="DIALOG_WIDTH"/>
+		<item value="120" key="DIALOG_Y_ORIGIN"/>
+		<item value="280" key="DIALOG_HEIGHT"/>
+		<item value="436" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
+		<item value="666" key="DIALOG_WIDTH"/>
+		<item value="134" key="DIALOG_Y_ORIGIN"/>
+		<item value="457" key="DIALOG_HEIGHT"/>
+		<item value="475" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

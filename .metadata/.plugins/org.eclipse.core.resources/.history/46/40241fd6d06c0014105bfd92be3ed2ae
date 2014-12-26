@@ -1,0 +1,39 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lnk_msp430g2553.cmd 
+
+C_SRCS += \
+../USCI_2.c \
+../gpio.c \
+../main.c 
+
+OBJS += \
+./USCI_2.obj \
+./gpio.obj \
+./main.obj 
+
+C_DEPS += \
+./USCI_2.pp \
+./gpio.pp \
+./main.pp 
+
+C_DEPS__QUOTED += \
+"USCI_2.pp" \
+"gpio.pp" \
+"main.pp" 
+
+OBJS__QUOTED += \
+"USCI_2.obj" \
+"gpio.obj" \
+"main.obj" 
+
+C_SRCS__QUOTED += \
+"../USCI_2.c" \
+"../gpio.c" \
+"../main.c" 
+
+

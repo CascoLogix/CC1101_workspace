@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.ti.ccstudio.base:6.0.0.00463"/>
+		<item value="com.ti.ccstudio.gui.composer.ccs:1.0.0.201311141900"/>
+		<item value="com.ti.ccstudio:6.0.0.201311141900"/>
+		<item value="com.ti.cgt.msp430.4.2.help:4.2.0.201307261542"/>
+		<item value="com.ti.mcu.msp430ware.product.ui:1.95.0.32"/>
+		<item value="com.ti.mcu.msp430ware.product_1.60.2.09:1.60.2.09"/>
+		<item value="com.ti.mcu.msp430ware.product_1.90.0.30:1.90.0.30"/>
+		<item value="com.ti.mcu.msp430ware.product_1.95.0.32:1.95.0.32"/>
+		<item value="gnu.io.rxtx:2.1.7.4_v20071016-7B57e7UAXMAAqGAGf"/>
+		<item value="org.eclipse.cdt.build.crossgcc:1.2.0.201309180223"/>
+		<item value="org.eclipse.cdt.gdb:7.2.1.201309180223"/>
+		<item value="org.eclipse.cdt.launch.remote:6.2.0.201309180223"/>
+		<item value="org.eclipse.cdt.mylyn:5.5.1.v20130917-0100"/>
+		<item value="org.eclipse.cdt:8.2.1.201309180223"/>
+		<item value="org.eclipse.cvs:1.4.0.v20130911-1000"/>
+		<item value="org.eclipse.draw2d:3.9.0.201305060205"/>
+		<item value="org.eclipse.egit:3.0.3.201309161630-r"/>
+		<item value="org.eclipse.emf.common:2.9.1.v20130827-0309"/>
+		<item value="org.eclipse.emf.ecore.edit:2.8.0.v20130610-0406"/>
+		<item value="org.eclipse.emf.ecore:2.9.1.v20130827-0309"/>
+		<item value="org.eclipse.emf.edit:2.9.0.v20130610-0406"/>
+		<item value="org.eclipse.emf.transaction:1.7.0.201306111400"/>
+		<item value="org.eclipse.emf.validation:1.7.0.201306111341"/>
+		<item value="org.eclipse.emf.workspace:1.7.0.201306111400"/>
+		<item value="org.eclipse.epp.mpc:1.2.1.I20130917-2019"/>
+		<item value="org.eclipse.epp.package.cpp.feature:2.0.1.20130919-0803"/>
+		<item value="org.eclipse.gef:3.9.0.201305060205"/>
+		<item value="org.eclipse.gmf.runtime.notation:1.7.0.201306101425"/>
+		<item value="org.eclipse.gmf:1.7.0.201306111432"/>
+		<item value="org.eclipse.help:2.0.1.v20130911-1000"/>
+		<item value="org.eclipse.jgit:3.0.3.201309161630-r"/>
+		<item value="org.eclipse.mylyn.bugzilla_feature:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.commons.identity:1.1.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.commons.notifications:1.1.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.commons.repositories:1.1.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.commons:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.context_feature:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.discovery:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.ide_feature:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.monitor:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.tasks.ide:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.team_feature:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn.wikitext_feature:1.8.1.v20130917-0100"/>
+		<item value="org.eclipse.mylyn_feature:3.9.1.v20130917-0100"/>
+		<item value="org.eclipse.platform:4.3.1.v20130911-1000"/>
+		<item value="org.eclipse.rcp:4.3.1.v20130911-1000"/>
+		<item value="org.eclipse.rse.core:3.4.100.201307171557"/>
+		<item value="org.eclipse.rse.dstore:3.4.100.201309112143"/>
+		<item value="org.eclipse.rse.ftp:3.2.0.201305152119"/>
+		<item value="org.eclipse.rse.local:2.1.500.201305211438"/>
+		<item value="org.eclipse.rse.ssh:3.0.500.201305201712"/>
+		<item value="org.eclipse.rse.telnet:2.3.100.201305201712"/>
+		<item value="org.eclipse.rse.terminals:1.2.100.201308011444"/>
+		<item value="org.eclipse.rse:3.5.0.201309112143"/>
+		<item value="org.eclipse.tm.terminal.serial:2.1.300.201308290741"/>
+		<item value="org.eclipse.tm.terminal.ssh:2.1.300.201305201712"/>
+		<item value="org.eclipse.tm.terminal.telnet:2.1.300.201305201712"/>
+		<item value="org.eclipse.tm.terminal.view:2.4.100.201305201712"/>
+		<item value="org.eclipse.tm.terminal:3.2.100.201308011444"/>
+		<item value="org.eclipse.wst.jsdt.feature:1.5.1.v201307171524-7H7FFhVFC7sResSz-gpggbs"/>
+	</list>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="ShowDerived"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode/&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="105" key="DIALOG_Y_ORIGIN"/>
+			<item value="508" key="DIALOG_X_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+	<section name="ExternalProjectImportWizard">
+	</section>
+</section>

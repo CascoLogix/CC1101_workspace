@@ -1,0 +1,21 @@
+
+**** Build of configuration Debug for project LaunchPad_MSP430G2553 ****
+
+"c:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../main.c'
+'Invoking: MSP430 Compiler'
+"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/bin/cl430" -vmsp --abi=eabi --include_path="c:/ti/ccsv6/ccs_base/msp430/include" --include_path="c:/ti/ccsv6/tools/compiler/msp430_4.3.5/include" --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: LaunchPad_MSP430G2553.out'
+'Invoking: MSP430 Linker'
+"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/bin/cl430" -vmsp --abi=eabi --advice:power=all -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"LaunchPad_MSP430G2553.map" --heap_size=80 --stack_size=80 -i"c:/ti/ccsv6/ccs_base/msp430/include" -i"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/lib" -i"c:/ti/ccsv6/tools/compiler/msp430_4.3.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="LaunchPad_MSP430G2553_linkInfo.xml" --rom_model -o "LaunchPad_MSP430G2553.out"  "./main.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changes using LPMx or _bis_SR_register() or __low_power_mode_x() in this project.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 1 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 2 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: LaunchPad_MSP430G2553.out'
+' '
+
+**** Build Finished ****

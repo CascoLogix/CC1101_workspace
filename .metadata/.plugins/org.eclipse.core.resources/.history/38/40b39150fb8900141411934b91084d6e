@@ -1,0 +1,148 @@
+/*
+ * Pinouts.h
+ *
+ *  Created on: Mar 31, 2013
+ *      Author: Lucas
+ */
+
+#ifndef PINOUTS_H_
+#define PINOUTS_H_
+
+#include <msp430.h>
+#include <GPIO.h>
+
+//----------------------------------------------------------------------------
+// Select which port will be used for interface to CCxxxx
+//----------------------------------------------------------------------------
+//#define RF_SER_INTF       SER_INTF_BITBANG	// Interface to CCxxxx
+//#define RF_SER_INTF		SER_INTF_USCIA0
+#define RF_SER_INTF       SER_INTF_USCIB0		// Interface to CCxxxx
+
+
+
+#if defined (__MSP430G2553__)
+
+#if !defined (__PxSEL2__)
+#define __PxSEL2__					  //Some MSP430s do not incorporate PxSEL2s
+#endif
+
+/* TODO:
+ * - P1.0: LED1 (red)
+ * - P1.1: UC0ARXD (input)
+ * - P1.2: UCA0TXD (output)
+ * - P1.3: S2 (pushbutton)
+ * - P1.4: Use this as pulse input?  Use as gated power to ultrasonic sensor?
+ * - P1.5: UCB0CLK (SPI/CLK)
+ * - P1.6: UCB0SOMI (SPI/GDO1/MISO)
+ * - P1.7: UCB0SIMO (SPI/MOSI)
+ * - P2.0: TA1.0 (buzzer)
+ * - P2.1: Use this as pulse input?  Use as gated power to ultrasonic sensor?
+ * - P2.2: (SPI/CSn)
+ * - P2.3: (GDO0)
+ * - P2.4: (GDO2)
+ * - P2.5: Use this as pulse input?  Use as gated power to ultrasonic sensor?
+ * - P2.6: 32.768kHz Crystal
+ * - P2.7: 32.768kHz Crystal
+*/
+
+// SPI port definitions               // Adjust the values for the chosen
+#define SPI_USCIA0_PxSEL	(GPIO_PORT1.select)		// interfaces, according to the pin
+#define SPI_USCIA0_PxSEL2	(GPIO_PORT1.select_2)
+#define SPI_USCIA0_PxDIR	(GPIO_PORT1.direction)	// assignments indicated in the
+#define SPI_USCIA0_PxIN		(GPIO_PORT1.in)			// chosen MSP430 device datasheet.
+#define SPI_USCIA0_SIMO		(BIT2)
+#define SPI_USCIA0_SOMI		(BIT1)
+#define SPI_USCIA0_UCLK		(BIT4)
+
+
+// SPI port definitions               // Adjust the values for the chosen
+#define SPI_USCIB0_PxSEL	(GPIO_PORT1.select)		// interfaces, according to the pin
+#define SPI_USCIB0_PxSEL2	(GPIO_PORT1.select_2)
+#define SPI_USCIB0_PxDIR	(GPIO_PORT1.direction)	// assignments indicated in the
+#define SPI_USCIB0_PxIN		(GPIO_PORT1.in)			// chosen MSP430 device datasheet.
+#define SPI_USCIB0_SIMO		(BIT7)
+#define SPI_USCIB0_SOMI		(BIT6)
+#define SPI_USCIB0_UCLK		(BIT5)
+
+
+// LED port definitions
+#define LED_PxOUT			(GPIO_PORT1.out)
+#define LED_PxDIR			(GPIO_PORT1.direction)
+#define LED1				(BIT0)
+#define LED2				(BIT6)
+
+
+// Switch port definitions
+#define SW_PxIN				(GPIO_PORT1.in)
+#define SW_PxIE				(GPIO_PORT1.interrupt_enable)
+#define SW_PxIES			(GPIO_PORT1.interrupt_edge_select)
+#define SW_PxIFG			(GPIO_PORT1.interrupt_flag)
+#define SW_PxREN			(GPIO_PORT1.resistor_enable)
+#define SW_PxOUT			(GPIO_PORT1.out)
+//#define SW1				(RESET)		//We don't want to use the reset button as a trigger...wouldn't be very useful
+#define SW2					(BIT3)
+
+
+// GDO0 Definitions
+#define GDO0_PxOUT			(GPIO_PORT2.out)					// Original setting was Port 1
+#define GDO0_PxIN			(GPIO_PORT2.in)						// Original setting was Port 1
+#define GDO0_PxDIR			(GPIO_PORT2.direction)				// Original setting was Port 1
+#define GDO0_PxIE			(GPIO_PORT2.interrupt_enable)		// Original setting was Port 1
+#define GDO0_PxIES			(GPIO_PORT2.interrupt_edge_select)	// Original setting was Port 1
+#define GDO0_PxIFG			(GPIO_PORT2.interrupt_flag)			// Original setting was Port 1
+#define GDO0_PxREN			(GPIO_PORT2.resistor_enable)		// Original setting was Port 1
+#define GDO0_PIN			(BIT3)								// Original setting was BIT4
+
+
+// GDO1 Definitions
+#define GDO1_PxOUT			(GPIO_PORT1.out)					// GDO1 = MISO
+#define GDO1_PxIN			(GPIO_PORT1.in)						// GDO1 = MISO
+#define GDO1_PxDIR			(GPIO_PORT1.direction)				// GDO1 = MISO
+#define GDO1_PIN			(BIT6)								// GDO1 = MISO
+
+
+// GDO2 Definitions
+#define GDO2_PxOUT			(GPIO_PORT1.out)					// Original setting was Port 2
+#define GDO2_PxIN			(GPIO_PORT1.in)						// Original setting was Port 2
+#define GDO2_PxDIR			(GPIO_PORT1.direction)				// Original setting was Port 2
+#define GDO2_PIN			(BIT0)
+
+
+// CSn Definitions
+#define CSn_PxOUT			(GPIO_PORT2.out)
+#define CSn_PxDIR			(GPIO_PORT2.direction)
+#define CSn_PIN				(BIT7)								// Original setting was BIT1
+
+
+// Buzzer Definitions
+#define GDO0_PxOUT			(GPIO_PORT2.out)					// Original setting was Port 1
+#define GDO0_PxIN			(GPIO_PORT2.in)						// Original setting was Port 1
+#define GDO0_PxDIR			(GPIO_PORT2.direction)				// Original setting was Port 1
+#define GDO0_PxIE			(GPIO_PORT2.interrupt_enable)		// Original setting was Port 1
+#define GDO0_PxIES			(GPIO_PORT2.interrupt_edge_select)	// Original setting was Port 1
+#define GDO0_PxIFG			(GPIO_PORT2.interrupt_flag)			// Original setting was Port 1
+#define GDO0_PxREN			(GPIO_PORT2.resistor_enable)		// Original setting was Port 1
+#define GDO0_PIN			(BIT3)								// Original setting was BIT4
+
+#endif /* __MSP430G2553__ */
+
+
+//******************************************************************************
+//  These constants are used to identify the chosen SPI and UART interfaces.
+//******************************************************************************
+#define SER_INTF_NULL    0
+#define SER_INTF_USART0  1
+#define SER_INTF_USART1  2
+#define SER_INTF_USCIA0  3
+#define SER_INTF_USCIA1  4
+#define SER_INTF_USCIA2  5
+#define SER_INTF_USCIA3  6
+#define SER_INTF_USCIB0  7
+#define SER_INTF_USCIB1  8
+#define SER_INTF_USCIB2  9
+#define SER_INTF_USCIB3  10
+#define SER_INTF_USI     11
+#define SER_INTF_BITBANG 12
+
+
+#endif /* PINOUTS_H_ */

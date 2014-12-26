@@ -1,0 +1,22 @@
+
+**** Build of configuration CC2500-LinkTo for project Project ****
+
+"c:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk_applications/nwk_freq.c', needed by `Components/nwk_applications/nwk_freq.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk_applications/nwk_ioctl.c', needed by `Components/nwk_applications/nwk_ioctl.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk_applications/nwk_join.c', needed by `Components/nwk_applications/nwk_join.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk_applications/nwk_link.c', needed by `Components/nwk_applications/nwk_link.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk_applications/nwk_mgmt.c', needed by `Components/nwk_applications/nwk_mgmt.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk_applications/nwk_ping.c', needed by `Components/nwk_applications/nwk_ping.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk_applications/nwk_security.c', needed by `Components/nwk_applications/nwk_security.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk/nwk.c', needed by `Components/nwk/nwk.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk/nwk_QMgmt.c', needed by `Components/nwk/nwk_QMgmt.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk/nwk_api.c', needed by `Components/nwk/nwk_api.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk/nwk_frame.c', needed by `Components/nwk/nwk_frame.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/simpliciti/nwk/nwk_globals.c', needed by `Components/nwk/nwk_globals.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/mrfi/mrfi.c', needed by `Components/mrfi/mrfi.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Components/bsp/bsp.c', needed by `Components/bsp/bsp.obj'.
+gmake: *** No rule to make target `C:/ti/ccsv6/eclipse/DEV_ROOT/Projects/Examples/Applications/main_LinkTo.c', needed by `Applications/application/LinkTo/main_LinkTo.obj'.
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

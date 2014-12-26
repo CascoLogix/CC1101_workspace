@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CC1101/Pinouts.h&apos; to &apos;Pinouts_ORIGINAL.h&apos;" description="Rename resource &apos;Pinouts.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Pinouts.h" name="Pinouts_ORIGINAL.h" stamp="1415249533025" updateReferences="true"/>
+</session>

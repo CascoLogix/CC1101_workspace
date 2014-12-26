@@ -1,0 +1,11 @@
+
+**** Clean-only build of configuration Debug for project MSP430G2553_LaunchPad_One_Shot ****
+
+"c:\\ti\\ccsv6\\utils\\bin\\gmake" -k clean 
+DEL /F  "MSP430G2553_LaunchPad_One_Shot.out"  "MSP430G2553_LaunchPad_One_Shot.hex" 
+DEL /F "GPIO.pp" "Timer0_A3.pp" "Timer1_A3.pp" "main.pp" 
+DEL /F "GPIO.obj" "Timer0_A3.obj" "Timer1_A3.obj" "main.obj" 
+'Finished clean'
+' '
+
+**** Build Finished ****
