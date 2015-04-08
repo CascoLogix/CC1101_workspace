@@ -1,0 +1,164 @@
+\hypertarget{main_8c}{\section{main.\-c File Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+{\ttfamily \#include \char`\"{}msp430g2553.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a65e9886d74aaee76545e83dd09011727}{false}~(0)
+\item 
+\#define \hyperlink{main_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}~(!\hyperlink{main_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+\#define \hyperlink{main_8c_a695f3eb05790aed17395671cf9dd9837}{Ultra\-Port\-Out}~P2\-O\-U\-T
+\item 
+\#define \hyperlink{main_8c_ac7399ab504e10de1a8fe23fd6754b9ee}{Ultra\-Port\-Direction}~P2\-D\-I\-R
+\item 
+\#define \hyperlink{main_8c_a0315bf11d517ee068e73f759a86dc60c}{Ultra\-Front\-Pin}~B\-I\-T1
+\item 
+\#define \hyperlink{main_8c_aaa0e59b0952950f0739f064bde385416}{Ultra\-Right\-Pin}~B\-I\-T1
+\item 
+\#define \hyperlink{main_8c_a90f1279eebe51affe3dac5e10bfdfdc3}{Ultra\-Echo}~B\-I\-T0
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_a6b2dd3f103921a04c4272bc47389056d}{get\-\_\-measure} ()
+\begin{DoxyCompactList}\small\item\em This is the measure function. \end{DoxyCompactList}\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\item 
+void \hyperlink{main_8c_a41ec30db346053dd84babe69f89a4b77}{serial\-Print} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em This is the serial\-Print function. \end{DoxyCompactList}\item 
+void \hyperlink{main_8c_a33240a89b0c251451e9810c707c5f7a2}{serial\-Print\-Int} (const int $\ast$i)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{main_8c_a629bf9f0eb265f2446306d4418ee4c81}{U\-S\-C\-I0\-T\-X\-\_\-\-I\-S\-R} (void)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{main_8c_aa011250fb0b718d888e8df2ede557255}{U\-S\-C\-I0\-R\-X\-\_\-\-I\-S\-R} (void)
+\item 
+\-\_\-\-\_\-interrupt void \hyperlink{main_8c_a52c0106c875fd2b3d82b08d35377d945}{Timer1\-A0} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile unsigned int \hyperlink{main_8c_aae52a27e7ff68291b22dbf620434d906}{measure}
+\item 
+volatile unsigned int \hyperlink{main_8c_a2f03d0d342b153b548abc8035fde710e}{up} =0
+\item 
+unsigned int \hyperlink{main_8c_a26d5b102a77c8e178c20dd7421b5cb34}{measure\-\_\-1} = 0
+\item 
+unsigned int \hyperlink{main_8c_a590bc7ba858ce8d48f4fab66c5474699}{measure\-\_\-2} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{main_8c_a65e9886d74aaee76545e83dd09011727}{\index{main.\-c@{main.\-c}!false@{false}}
+\index{false@{false}!main.c@{main.\-c}}
+\subsubsection[{false}]{\setlength{\rightskip}{0pt plus 5cm}\#define false~(0)}}\label{main_8c_a65e9886d74aaee76545e83dd09011727}
+\hypertarget{main_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{\index{main.\-c@{main.\-c}!true@{true}}
+\index{true@{true}!main.c@{main.\-c}}
+\subsubsection[{true}]{\setlength{\rightskip}{0pt plus 5cm}\#define true~(!{\bf false})}}\label{main_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}
+\hypertarget{main_8c_a90f1279eebe51affe3dac5e10bfdfdc3}{\index{main.\-c@{main.\-c}!Ultra\-Echo@{Ultra\-Echo}}
+\index{Ultra\-Echo@{Ultra\-Echo}!main.c@{main.\-c}}
+\subsubsection[{Ultra\-Echo}]{\setlength{\rightskip}{0pt plus 5cm}\#define Ultra\-Echo~B\-I\-T0}}\label{main_8c_a90f1279eebe51affe3dac5e10bfdfdc3}
+\hypertarget{main_8c_a0315bf11d517ee068e73f759a86dc60c}{\index{main.\-c@{main.\-c}!Ultra\-Front\-Pin@{Ultra\-Front\-Pin}}
+\index{Ultra\-Front\-Pin@{Ultra\-Front\-Pin}!main.c@{main.\-c}}
+\subsubsection[{Ultra\-Front\-Pin}]{\setlength{\rightskip}{0pt plus 5cm}\#define Ultra\-Front\-Pin~B\-I\-T1}}\label{main_8c_a0315bf11d517ee068e73f759a86dc60c}
+\hypertarget{main_8c_ac7399ab504e10de1a8fe23fd6754b9ee}{\index{main.\-c@{main.\-c}!Ultra\-Port\-Direction@{Ultra\-Port\-Direction}}
+\index{Ultra\-Port\-Direction@{Ultra\-Port\-Direction}!main.c@{main.\-c}}
+\subsubsection[{Ultra\-Port\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}\#define Ultra\-Port\-Direction~P2\-D\-I\-R}}\label{main_8c_ac7399ab504e10de1a8fe23fd6754b9ee}
+\hypertarget{main_8c_a695f3eb05790aed17395671cf9dd9837}{\index{main.\-c@{main.\-c}!Ultra\-Port\-Out@{Ultra\-Port\-Out}}
+\index{Ultra\-Port\-Out@{Ultra\-Port\-Out}!main.c@{main.\-c}}
+\subsubsection[{Ultra\-Port\-Out}]{\setlength{\rightskip}{0pt plus 5cm}\#define Ultra\-Port\-Out~P2\-O\-U\-T}}\label{main_8c_a695f3eb05790aed17395671cf9dd9837}
+\hypertarget{main_8c_aaa0e59b0952950f0739f064bde385416}{\index{main.\-c@{main.\-c}!Ultra\-Right\-Pin@{Ultra\-Right\-Pin}}
+\index{Ultra\-Right\-Pin@{Ultra\-Right\-Pin}!main.c@{main.\-c}}
+\subsubsection[{Ultra\-Right\-Pin}]{\setlength{\rightskip}{0pt plus 5cm}\#define Ultra\-Right\-Pin~B\-I\-T1}}\label{main_8c_aaa0e59b0952950f0739f064bde385416}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8c_a6b2dd3f103921a04c4272bc47389056d}{\index{main.\-c@{main.\-c}!get\-\_\-measure@{get\-\_\-measure}}
+\index{get\-\_\-measure@{get\-\_\-measure}!main.c@{main.\-c}}
+\subsubsection[{get\-\_\-measure}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-measure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a6b2dd3f103921a04c4272bc47389056d}
+
+
+This is the measure function. 
+
+This is the detailed description of \hyperlink{main_8c_a6b2dd3f103921a04c4272bc47389056d}{get\-\_\-measure()}
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{\index{main.\-c@{main.\-c}!main@{main}}
+\index{main@{main}!main.c@{main.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}
+This is the main function \hypertarget{main_8c_a41ec30db346053dd84babe69f89a4b77}{\index{main.\-c@{main.\-c}!serial\-Print@{serial\-Print}}
+\index{serial\-Print@{serial\-Print}!main.c@{main.\-c}}
+\subsubsection[{serial\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void serial\-Print (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a41ec30db346053dd84babe69f89a4b77}
+
+
+This is the serial\-Print function. 
+
+The serial\-Print function prints a string to the U\-A\-R\-T port.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & The pointer to the string to pass to the function \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8c_a33240a89b0c251451e9810c707c5f7a2}{\index{main.\-c@{main.\-c}!serial\-Print\-Int@{serial\-Print\-Int}}
+\index{serial\-Print\-Int@{serial\-Print\-Int}!main.c@{main.\-c}}
+\subsubsection[{serial\-Print\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void serial\-Print\-Int (
+\begin{DoxyParamCaption}
+\item[{const int $\ast$}]{i}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a33240a89b0c251451e9810c707c5f7a2}
+\hypertarget{main_8c_a52c0106c875fd2b3d82b08d35377d945}{\index{main.\-c@{main.\-c}!Timer1\-A0@{Timer1\-A0}}
+\index{Timer1\-A0@{Timer1\-A0}!main.c@{main.\-c}}
+\subsubsection[{Timer1\-A0}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void Timer1\-A0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a52c0106c875fd2b3d82b08d35377d945}
+\hypertarget{main_8c_aa011250fb0b718d888e8df2ede557255}{\index{main.\-c@{main.\-c}!U\-S\-C\-I0\-R\-X\-\_\-\-I\-S\-R@{U\-S\-C\-I0\-R\-X\-\_\-\-I\-S\-R}}
+\index{U\-S\-C\-I0\-R\-X\-\_\-\-I\-S\-R@{U\-S\-C\-I0\-R\-X\-\_\-\-I\-S\-R}!main.c@{main.\-c}}
+\subsubsection[{U\-S\-C\-I0\-R\-X\-\_\-\-I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void U\-S\-C\-I0\-R\-X\-\_\-\-I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_aa011250fb0b718d888e8df2ede557255}
+\hypertarget{main_8c_a629bf9f0eb265f2446306d4418ee4c81}{\index{main.\-c@{main.\-c}!U\-S\-C\-I0\-T\-X\-\_\-\-I\-S\-R@{U\-S\-C\-I0\-T\-X\-\_\-\-I\-S\-R}}
+\index{U\-S\-C\-I0\-T\-X\-\_\-\-I\-S\-R@{U\-S\-C\-I0\-T\-X\-\_\-\-I\-S\-R}!main.c@{main.\-c}}
+\subsubsection[{U\-S\-C\-I0\-T\-X\-\_\-\-I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-interrupt void U\-S\-C\-I0\-T\-X\-\_\-\-I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{main_8c_a629bf9f0eb265f2446306d4418ee4c81}
+
+
+\subsection{Variable Documentation}
+\hypertarget{main_8c_aae52a27e7ff68291b22dbf620434d906}{\index{main.\-c@{main.\-c}!measure@{measure}}
+\index{measure@{measure}!main.c@{main.\-c}}
+\subsubsection[{measure}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned int measure}}\label{main_8c_aae52a27e7ff68291b22dbf620434d906}
+\hypertarget{main_8c_a26d5b102a77c8e178c20dd7421b5cb34}{\index{main.\-c@{main.\-c}!measure\-\_\-1@{measure\-\_\-1}}
+\index{measure\-\_\-1@{measure\-\_\-1}!main.c@{main.\-c}}
+\subsubsection[{measure\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int measure\-\_\-1 = 0}}\label{main_8c_a26d5b102a77c8e178c20dd7421b5cb34}
+\hypertarget{main_8c_a590bc7ba858ce8d48f4fab66c5474699}{\index{main.\-c@{main.\-c}!measure\-\_\-2@{measure\-\_\-2}}
+\index{measure\-\_\-2@{measure\-\_\-2}!main.c@{main.\-c}}
+\subsubsection[{measure\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int measure\-\_\-2 = 0}}\label{main_8c_a590bc7ba858ce8d48f4fab66c5474699}
+\hypertarget{main_8c_a2f03d0d342b153b548abc8035fde710e}{\index{main.\-c@{main.\-c}!up@{up}}
+\index{up@{up}!main.c@{main.\-c}}
+\subsubsection[{up}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned int up =0}}\label{main_8c_a2f03d0d342b153b548abc8035fde710e}
